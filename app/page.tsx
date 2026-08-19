@@ -9,22 +9,34 @@ import {
   Mail,
   Linkedin,
   MapPin,
-  ChevronRight,
+  Calendar,
   GraduationCap,
   Copy,
   Check,
   Menu,
   X,
-  CheckCircle2,
   ArrowRight,
   TrendingUp,
   Database,
   Brain,
-  FileText,
+  Bot,
   Workflow,
+  Sparkles,
   AlertTriangle,
   Wrench,
-  CheckCircle
+  CircleCheck,
+  CheckCircle2,
+  Search,
+  RefreshCw,
+  Handshake,
+  Eye,
+  ListFilter,
+  Settings2,
+  LayoutDashboard,
+  ClipboardList,
+  Building2,
+  UsersRound,
+  Package
 } from "lucide-react";
 
 export default function Home() {
@@ -369,7 +381,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* What I Do Best (4 Clean Pillars) */}
+        {/* What I Do Best (4 Clean Pillars with Lucide Icons) */}
         <section id="focus" className="py-20">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
@@ -379,10 +391,15 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Pillar 1 */}
+              {/* Pillar 1: Search */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[#168C8C] font-bold text-lg mb-3 block">01</span>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <Search className="w-5 h-5" />
+                    </div>
+                    <span className="text-[#64748B] font-bold text-sm">01</span>
+                  </div>
                   <h3 className="text-xl font-bold text-[#172033] mb-3">Diagnose What Is Not Working</h3>
                   <p className="text-[#475467] text-sm leading-relaxed mb-6">
                     Deep-dive discovery to pinpoint underlying operational friction, data silos, CRM architecture breakdowns, and cross-functional bottlenecks.
@@ -395,10 +412,15 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Pillar 2 */}
+              {/* Pillar 2: Layers */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[#168C8C] font-bold text-lg mb-3 block">02</span>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <Layers className="w-5 h-5" />
+                    </div>
+                    <span className="text-[#64748B] font-bold text-sm">02</span>
+                  </div>
                   <h3 className="text-xl font-bold text-[#172033] mb-3">Design Practical Systems &amp; Processes</h3>
                   <p className="text-[#475467] text-sm leading-relaxed mb-6">
                     Architecting intuitive, scalable standard operating procedures and technical workflows that eliminate complexity and fit seamlessly into daily work.
@@ -411,10 +433,15 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Pillar 3 */}
+              {/* Pillar 3: RefreshCw */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[#168C8C] font-bold text-lg mb-3 block">03</span>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <RefreshCw className="w-5 h-5" />
+                    </div>
+                    <span className="text-[#64748B] font-bold text-sm">03</span>
+                  </div>
                   <h3 className="text-xl font-bold text-[#172033] mb-3">Implement &amp; Enable Adoption</h3>
                   <p className="text-[#475467] text-sm leading-relaxed mb-6">
                     Leading hands-on execution and change management to ensure tools and workflows are enthusiastically embraced by sales and operations teams.
@@ -427,10 +454,15 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Pillar 4 */}
+              {/* Pillar 4: Handshake */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[#168C8C] font-bold text-lg mb-3 block">04</span>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <Handshake className="w-5 h-5" />
+                    </div>
+                    <span className="text-[#64748B] font-bold text-sm">04</span>
+                  </div>
                   <h3 className="text-xl font-bold text-[#172033] mb-3">Transfer Ownership &amp; Improve</h3>
                   <p className="text-[#475467] text-sm leading-relaxed mb-6">
                     Establishing internal governance and champion networks so teams independently run, maintain, and continuously enhance their operations.
@@ -446,7 +478,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How I Work (Visual Process Pipeline) */}
+        {/* How I Work (Visual Process Pipeline with Lucide Icons) */}
         <section id="how-i-work" className="py-20 bg-[#EEF3F5] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
@@ -458,20 +490,26 @@ export default function Home() {
             <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 md:p-10 shadow-sm">
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-8">
                 {[
-                  { step: "01", name: "Observe", desc: "Desk-level observation of daily realities" },
-                  { step: "02", name: "Diagnose", desc: "Identify root cause issues and process friction" },
-                  { step: "03", name: "Prioritize", desc: "Focus on high-impact commercial & operational fixes" },
-                  { step: "04", name: "Build", desc: "Design practical SOPs, tools, and system workflows" },
-                  { step: "05", name: "Test", desc: "Validate workflows with desk-level teams" },
-                  { step: "06", name: "Enable", desc: "Deliver structured training & coaching" },
-                  { step: "07", name: "Transfer", desc: "Hand over ownership to empowered internal leaders" }
-                ].map((item) => (
-                  <div key={item.step} className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-xl p-4 text-center hover:bg-[#E9F4F4] hover:border-[#168C8C] transition-all">
-                    <span className="text-[0.7rem] font-bold uppercase text-[#168C8C] block mb-1">Step {item.step}</span>
-                    <span className="font-bold text-sm text-[#172033] block mb-1">{item.name}</span>
-                    <span className="text-[0.725rem] text-[#64748B] leading-tight block">{item.desc}</span>
-                  </div>
-                ))}
+                  { step: "01", name: "Observe", desc: "Desk-level observation of daily realities", icon: Eye },
+                  { step: "02", name: "Diagnose", desc: "Identify root cause issues and process friction", icon: Search },
+                  { step: "03", name: "Prioritize", desc: "Focus on high-impact commercial & operational fixes", icon: ListFilter },
+                  { step: "04", name: "Build", desc: "Design practical SOPs, tools, and system workflows", icon: Settings2 },
+                  { step: "05", name: "Test", desc: "Validate workflows with desk-level teams", icon: CircleCheck },
+                  { step: "06", name: "Enable", desc: "Deliver structured training & coaching", icon: GraduationCap },
+                  { step: "07", name: "Transfer", desc: "Hand over ownership to empowered internal leads", icon: Handshake }
+                ].map((item) => {
+                  const StepIcon = item.icon;
+                  return (
+                    <div key={item.step} className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-xl p-4 text-center hover:bg-[#E9F4F4] hover:border-[#168C8C] transition-all flex flex-col items-center">
+                      <div className="w-9 h-9 rounded-md bg-white border border-[#E2E4E9] text-[#168C8C] flex items-center justify-center mb-2">
+                        <StepIcon className="w-4 h-4" />
+                      </div>
+                      <span className="text-[0.7rem] font-bold uppercase text-[#168C8C] block mb-0.5">Step {item.step}</span>
+                      <span className="font-bold text-sm text-[#172033] block mb-1">{item.name}</span>
+                      <span className="text-[0.725rem] text-[#64748B] leading-tight block">{item.desc}</span>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="bg-[#E9F4F4] border-l-4 border-[#168C8C] p-4 rounded-r-lg text-xs md:text-sm text-[#172033] leading-relaxed">
@@ -481,7 +519,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Selected Impact (Case Studies) */}
+        {/* Selected Impact (Case Studies with Lucide Icons) */}
         <section id="initiatives" className="py-20">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
@@ -494,12 +532,17 @@ export default function Home() {
               {/* Case 1 */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Revenue Management &amp; Quoting</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Centralized Corporate International Quote Team &amp; Margin Guidance</h3>
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Revenue Management &amp; Quoting</span>
+                      <h3 className="text-lg font-bold text-[#172033]">Centralized Corporate International Quote Team &amp; Margin Guidance</h3>
+                    </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
-                    SEKO Logistics
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> SEKO Logistics
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
@@ -517,7 +560,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5" /> Outcome
+                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Established structured quoting governance, protected gross margins, and provided real-time pricing intelligence to commercial leadership.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -530,12 +573,17 @@ export default function Home() {
               {/* Case 2 */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">CRM Strategy &amp; Administration</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Microsoft Dynamics 365 Architecture &amp; 39,000+ Record Matching</h3>
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <LayoutDashboard className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">CRM Strategy &amp; Administration</span>
+                      <h3 className="text-lg font-bold text-[#172033]">Microsoft Dynamics 365 Architecture &amp; 39,000+ Record Matching</h3>
+                    </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
-                    PGL (Perimeter Global Logistics)
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> PGL (Perimeter Global Logistics)
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
@@ -553,7 +601,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5" /> Outcome
+                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Restructured the CRM environment into a reliable foundation for sales targeting, lead segmentation, and commercial executive reporting.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -566,12 +614,17 @@ export default function Home() {
               {/* Case 3 */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">M&amp;A Integration &amp; Client Success</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Transition &amp; Implementation Program for Strategic Accounts</h3>
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <ClipboardList className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">M&amp;A Integration &amp; Client Success</span>
+                      <h3 className="text-lg font-bold text-[#172033]">Transition &amp; Implementation Program for Strategic Accounts</h3>
+                    </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
-                    SEKO Logistics
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> SEKO Logistics
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
@@ -589,7 +642,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5" /> Outcome
+                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Ensured acquired entities were rapidly absorbed into the commercial organization and accelerated successful account go-lives across the network.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -602,12 +655,17 @@ export default function Home() {
               {/* Case 4 */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Sales Enablement &amp; Team Building</span>
-                    <h3 className="text-lg font-bold text-[#172033]">BDR Program Launch &amp; 60%+ CRM Adoption Transformation</h3>
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Sales Enablement &amp; Team Building</span>
+                      <h3 className="text-lg font-bold text-[#172033]">BDR Program Launch &amp; 60%+ CRM Adoption Transformation</h3>
+                    </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
-                    SEKO Logistics
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> SEKO Logistics
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
@@ -625,7 +683,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5" /> Outcome
+                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Increased sales performance visibility by 100%, grew CRM adoption from low engagement to 60%+ usage, and earned the 2018 SEKO Logistics Service Excellence Award.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -638,12 +696,17 @@ export default function Home() {
               {/* Case 5 */}
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Global Business Process Improvement</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Global EDI Billing Process Design &amp; 50% Cycle Time Reduction</h3>
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <Globe className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Global Business Process Improvement</span>
+                      <h3 className="text-lg font-bold text-[#172033]">Global EDI Billing Process Design &amp; 50% Cycle Time Reduction</h3>
+                    </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
-                    Expeditors International
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> Expeditors International
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
@@ -661,7 +724,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5" /> Outcome
+                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Reduced average project timeline by 50% and supported the initiative reaching 88.8% invoicing quality globally by March 2015.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -674,7 +737,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experience Timeline Section */}
+        {/* Experience Timeline Section (Lucide Icons: Building2, Calendar, MapPin, Globe) */}
         <section id="experience" className="py-20 bg-[#F0EFEB] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
@@ -712,16 +775,18 @@ export default function Home() {
                 <div key={idx} className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-[#E2E4E9] gap-2">
                     <div>
-                      <span className="font-bold text-base text-[#172033]">{exp.company}</span>
+                      <span className="font-bold text-base text-[#172033] flex items-center gap-2">
+                        <Building2 className="w-4 h-4 text-[#168C8C]" /> {exp.company}
+                      </span>
                       <h3 className="text-sm font-semibold text-[#168C8C]">{exp.role}</h3>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full">
-                        {exp.period}
+                      <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5">
+                        <Calendar className="w-3 h-3 text-[#64748B]" /> {exp.period}
                       </span>
                       {exp.location && (
                         <span className="text-xs text-[#64748B] flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5" /> {exp.location}
+                          <MapPin className="w-3.5 h-3.5 text-[#168C8C]" /> {exp.location}
                         </span>
                       )}
                     </div>
@@ -740,7 +805,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Applied AI & Automation Section (Secondary & Grounded) */}
+        {/* Applied AI & Automation Section (Lucide Icons: Brain, Bot, Workflow) */}
         <section id="ai-automation" className="py-20">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
@@ -757,7 +822,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] text-[#168C8C] flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-4">
                   <Brain className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-base text-[#172033] mb-2">Commercial Data Enrichment</h3>
@@ -767,8 +832,8 @@ export default function Home() {
               </div>
 
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] text-[#168C8C] flex items-center justify-center mb-4">
-                  <FileText className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-4">
+                  <Bot className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-base text-[#172033] mb-2">Intelligent SOP &amp; Playbook Extraction</h3>
                 <p className="text-xs md:text-sm text-[#475467] leading-relaxed">
@@ -777,7 +842,7 @@ export default function Home() {
               </div>
 
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] text-[#168C8C] flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-4">
                   <Workflow className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-base text-[#172033] mb-2">Workflow &amp; Quote Routing Automation</h3>
@@ -789,7 +854,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Technology Stack Section (De-emphasized, Clean) */}
+        {/* Technology Stack Section (Lucide Icons: Database, TrendingUp, Package, Workflow) */}
         <section id="tech-stack" className="py-20 bg-[#F0EFEB] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
@@ -824,7 +889,7 @@ export default function Home() {
 
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
                 <h3 className="font-bold text-sm text-[#172033] mb-3 flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-[#168C8C]" /> Logistics &amp; Quoting
+                  <Package className="w-4 h-4 text-[#168C8C]" /> Logistics &amp; Quoting
                 </h3>
                 <ul className="space-y-2 text-xs text-[#475467]">
                   <li>CargoWise / Logixboard / NEO</li>
@@ -849,7 +914,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Credentials & Education Section */}
+        {/* Credentials & Education Section (Lucide Icons: Award, GraduationCap) */}
         <section id="credentials" className="py-20">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
@@ -860,7 +925,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6">
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm">
                 <div className="flex items-center gap-3.5 mb-4">
-                  <div className="w-11 h-11 rounded-[6px] bg-[#E9F4F4] text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
                     <Award className="w-6 h-6" />
                   </div>
                   <div>
@@ -885,15 +950,21 @@ export default function Home() {
 
               <div className="space-y-4">
                 <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
-                  <h4 className="font-bold text-sm text-[#172033] mb-1">Colorado State University</h4>
+                  <h4 className="font-bold text-sm text-[#172033] mb-1 flex items-center gap-2">
+                    <GraduationCap className="w-4 h-4 text-[#168C8C]" /> Colorado State University
+                  </h4>
                   <p className="text-xs text-[#475467] leading-relaxed">Higher education academic foundation supporting business process improvement, leadership, and operational management.</p>
                 </div>
                 <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
-                  <h4 className="font-bold text-sm text-[#172033] mb-1">Lean &amp; Six Sigma</h4>
+                  <h4 className="font-bold text-sm text-[#172033] mb-1 flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-[#168C8C]" /> Lean &amp; Six Sigma
+                  </h4>
                   <p className="text-xs text-[#475467] leading-relaxed">Lean Enterprise–trained in root cause analysis, value stream mapping, and continuous improvement fundamentals.</p>
                 </div>
                 <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
-                  <h4 className="font-bold text-sm text-[#172033] mb-1">Service Excellence Award</h4>
+                  <h4 className="font-bold text-sm text-[#172033] mb-1 flex items-center gap-2">
+                    <Award className="w-4 h-4 text-[#168C8C]" /> Service Excellence Award
+                  </h4>
                   <p className="text-xs text-[#475467] leading-relaxed">SEKO Logistics (2018) – Recognized for outstanding leadership, field sales support, and organizational contribution.</p>
                 </div>
               </div>
@@ -901,7 +972,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Contact Section (Lucide Icons: Mail, Linkedin, MapPin, Copy) */}
         <section id="contact" className="py-20 bg-[#EEF3F5] border-t border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 md:p-12 shadow-sm">
@@ -915,7 +986,7 @@ export default function Home() {
 
                   <div className="space-y-4 my-6">
                     <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
                         <Mail className="w-5 h-5" />
                       </div>
                       <div>
@@ -936,7 +1007,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
                         <Linkedin className="w-5 h-5" />
                       </div>
                       <div>
@@ -953,7 +1024,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-5 h-5" />
                       </div>
                       <div>
@@ -1007,7 +1078,7 @@ export default function Home() {
                   </button>
                   {formSubmitted && (
                     <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-3 rounded-[6px] flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                      <CircleCheck className="w-4 h-4 flex-shrink-0" />
                       <span>Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.</span>
                     </div>
                   )}
@@ -1026,7 +1097,7 @@ export default function Home() {
             <span>Kristyn Rostan</span>
           </div>
           <div>&copy; 2026 Kristyn Rostan. All rights reserved.</div>
-          <div><a href="#hero" className="text-[#168C8C] hover:underline">Back to Top &uarr;</a></div>
+          <div><a href="#hero" className="text-[#168C8C] hover:underline flex items-center gap-1">Back to Top &uarr;</a></div>
         </div>
       </footer>
     </div>

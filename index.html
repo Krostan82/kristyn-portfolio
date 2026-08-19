@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Clean Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons Official Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -40,7 +40,7 @@
             </nav>
 
             <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
-                <i class="fa-solid fa-bars"></i>
+                <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
             </button>
         </div>
     </header>
@@ -67,13 +67,13 @@
 
                         <div class="hero-actions">
                             <a href="#initiatives" class="btn btn-primary">
-                                View My Work <i class="fa-solid fa-arrow-right"></i>
+                                View My Work <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
                             </a>
                             <a href="#contact" class="btn btn-secondary">
                                 Connect With Me
                             </a>
                             <a href="https://www.linkedin.com/in/kristyn-r-0410915/" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-                                <i class="fa-brands fa-linkedin-in"></i>
+                                <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
                             </a>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
             </div>
         </section>
 
-        <!-- What I Do Best Section -->
+        <!-- What I Do Best Section (Lucide Icons: Search, Layers, RefreshCw, Handshake) -->
         <section id="focus" class="section">
             <div class="container">
                 <div class="section-header">
@@ -170,62 +170,86 @@
                 </div>
 
                 <div class="pillars-grid">
+                    <!-- Pillar 1: Search -->
                     <div class="pillar-card">
-                        <span class="pillar-number">01</span>
+                        <div class="pillar-card-header">
+                            <div class="icon-box-lg">
+                                <i data-lucide="search" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <span class="pillar-number">01</span>
+                        </div>
                         <h3 class="pillar-title">Diagnose What Is Not Working</h3>
                         <p class="pillar-desc">
                             Deep-dive discovery to pinpoint underlying operational friction, data silos, CRM architecture breakdowns, and cross-functional bottlenecks.
                         </p>
                         <ul class="pillar-points">
-                            <li><i class="fa-solid fa-check"></i> Desk-level process mapping &amp; root cause problem solving</li>
-                            <li><i class="fa-solid fa-check"></i> CRM data model audit &amp; pipeline maturity assessment</li>
-                            <li><i class="fa-solid fa-check"></i> Identifying margin leakage &amp; quote turnaround bottlenecks</li>
+                            <li><i data-lucide="check-circle-2"></i> Desk-level process mapping &amp; root cause problem solving</li>
+                            <li><i data-lucide="check-circle-2"></i> CRM data model audit &amp; pipeline maturity assessment</li>
+                            <li><i data-lucide="check-circle-2"></i> Identifying margin leakage &amp; quote turnaround bottlenecks</li>
                         </ul>
                     </div>
 
+                    <!-- Pillar 2: Layers -->
                     <div class="pillar-card">
-                        <span class="pillar-number">02</span>
+                        <div class="pillar-card-header">
+                            <div class="icon-box-lg">
+                                <i data-lucide="layers" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <span class="pillar-number">02</span>
+                        </div>
                         <h3 class="pillar-title">Design Practical Systems &amp; Processes</h3>
                         <p class="pillar-desc">
                             Architecting intuitive, scalable standard operating procedures and technical workflows that eliminate complexity and fit seamlessly into daily work.
                         </p>
                         <ul class="pillar-points">
-                            <li><i class="fa-solid fa-check"></i> Standard Operating Procedure (SOP) design &amp; whiteboard mapping</li>
-                            <li><i class="fa-solid fa-check"></i> Margin guidance, quote desk workflows &amp; onboarding playbooks</li>
-                            <li><i class="fa-solid fa-check"></i> Power BI reporting, KPI tracking (NPS, churn, EBIT risk)</li>
+                            <li><i data-lucide="check-circle-2"></i> Standard Operating Procedure (SOP) design &amp; whiteboard mapping</li>
+                            <li><i data-lucide="check-circle-2"></i> Margin guidance, quote desk workflows &amp; onboarding playbooks</li>
+                            <li><i data-lucide="check-circle-2"></i> Power BI reporting, KPI tracking (NPS, churn, EBIT risk)</li>
                         </ul>
                     </div>
 
+                    <!-- Pillar 3: RefreshCw -->
                     <div class="pillar-card">
-                        <span class="pillar-number">03</span>
+                        <div class="pillar-card-header">
+                            <div class="icon-box-lg">
+                                <i data-lucide="refresh-cw" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <span class="pillar-number">03</span>
+                        </div>
                         <h3 class="pillar-title">Implement &amp; Enable Adoption</h3>
                         <p class="pillar-desc">
                             Leading hands-on execution and change management to ensure tools and workflows are enthusiastically embraced by sales and operations teams.
                         </p>
                         <ul class="pillar-points">
-                            <li><i class="fa-solid fa-check"></i> 5x Janek-certified sales training &amp; Freight Forwarding 101 curricula</li>
-                            <li><i class="fa-solid fa-check"></i> Inside sales &amp; BDR program execution with scripts &amp; cadences</li>
-                            <li><i class="fa-solid fa-check"></i> Dynamics 365 &amp; Salesforce administration and tool rollout</li>
+                            <li><i data-lucide="check-circle-2"></i> 5x Janek-certified sales training &amp; Freight Forwarding 101 curricula</li>
+                            <li><i data-lucide="check-circle-2"></i> Inside sales &amp; BDR program execution with scripts &amp; cadences</li>
+                            <li><i data-lucide="check-circle-2"></i> Dynamics 365 &amp; Salesforce administration and tool rollout</li>
                         </ul>
                     </div>
 
+                    <!-- Pillar 4: Handshake -->
                     <div class="pillar-card">
-                        <span class="pillar-number">04</span>
+                        <div class="pillar-card-header">
+                            <div class="icon-box-lg">
+                                <i data-lucide="handshake" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <span class="pillar-number">04</span>
+                        </div>
                         <h3 class="pillar-title">Transfer Ownership &amp; Improve</h3>
                         <p class="pillar-desc">
                             Establishing internal governance and champion networks so teams independently run, maintain, and continuously enhance their operations.
                         </p>
                         <ul class="pillar-points">
-                            <li><i class="fa-solid fa-check"></i> Training internal system owners &amp; regional process champions</li>
-                            <li><i class="fa-solid fa-check"></i> Clear governance standards and transition playbooks</li>
-                            <li><i class="fa-solid fa-check"></i> Continuous improvement loops using Lean &amp; Six Sigma principles</li>
+                            <li><i data-lucide="check-circle-2"></i> Training internal system owners &amp; regional process champions</li>
+                            <li><i data-lucide="check-circle-2"></i> Clear governance standards and transition playbooks</li>
+                            <li><i data-lucide="check-circle-2"></i> Continuous improvement loops using Lean &amp; Six Sigma principles</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How I Work (Visual Process Pipeline) -->
+        <!-- How I Work (Visual Process Pipeline with Lucide Icons: Eye, Search, ListFilter, Settings2, CircleCheck, GraduationCap, Handshake) -->
         <section id="how-i-work" class="section section-cool">
             <div class="container">
                 <div class="section-header">
@@ -236,37 +260,85 @@
 
                 <div class="process-callout">
                     <div class="process-pipeline">
+                        <!-- Step 1: Eye -->
                         <div class="process-step">
+                            <div class="process-step-icon-wrapper">
+                                <div class="icon-box-md">
+                                    <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
+                                </div>
+                            </div>
                             <div class="step-num">Step 1</div>
                             <div class="step-name">Observe</div>
                             <div class="step-desc">Desk-level observation of current day-to-day realities</div>
                         </div>
+
+                        <!-- Step 2: Search -->
                         <div class="process-step">
+                            <div class="process-step-icon-wrapper">
+                                <div class="icon-box-md">
+                                    <i data-lucide="search" style="width: 20px; height: 20px;"></i>
+                                </div>
+                            </div>
                             <div class="step-num">Step 2</div>
                             <div class="step-name">Diagnose</div>
                             <div class="step-desc">Identify root cause issues and process friction</div>
                         </div>
+
+                        <!-- Step 3: ListFilter -->
                         <div class="process-step">
+                            <div class="process-step-icon-wrapper">
+                                <div class="icon-box-md">
+                                    <i data-lucide="list-filter" style="width: 20px; height: 20px;"></i>
+                                </div>
+                            </div>
                             <div class="step-num">Step 3</div>
                             <div class="step-name">Prioritize</div>
                             <div class="step-desc">Focus on high-impact commercial &amp; operational fixes</div>
                         </div>
+
+                        <!-- Step 4: Settings2 -->
                         <div class="process-step">
+                            <div class="process-step-icon-wrapper">
+                                <div class="icon-box-md">
+                                    <i data-lucide="settings-2" style="width: 20px; height: 20px;"></i>
+                                </div>
+                            </div>
                             <div class="step-num">Step 4</div>
                             <div class="step-name">Build</div>
                             <div class="step-desc">Design practical SOPs, tools, and system workflows</div>
                         </div>
+
+                        <!-- Step 5: CircleCheck -->
                         <div class="process-step">
+                            <div class="process-step-icon-wrapper">
+                                <div class="icon-box-md">
+                                    <i data-lucide="circle-check" style="width: 20px; height: 20px;"></i>
+                                </div>
+                            </div>
                             <div class="step-num">Step 5</div>
                             <div class="step-name">Test</div>
                             <div class="step-desc">Validate workflows with desk-level teams</div>
                         </div>
+
+                        <!-- Step 6: GraduationCap -->
                         <div class="process-step">
+                            <div class="process-step-icon-wrapper">
+                                <div class="icon-box-md">
+                                    <i data-lucide="graduation-cap" style="width: 20px; height: 20px;"></i>
+                                </div>
+                            </div>
                             <div class="step-num">Step 6</div>
                             <div class="step-name">Enable</div>
                             <div class="step-desc">Deliver structured training, playbooks, and coaching</div>
                         </div>
+
+                        <!-- Step 7: Handshake -->
                         <div class="process-step">
+                            <div class="process-step-icon-wrapper">
+                                <div class="icon-box-md">
+                                    <i data-lucide="handshake" style="width: 20px; height: 20px;"></i>
+                                </div>
+                            </div>
                             <div class="step-num">Step 7</div>
                             <div class="step-name">Transfer</div>
                             <div class="step-desc">Hand over ownership to empowered internal leaders</div>
@@ -280,7 +352,7 @@
             </div>
         </section>
 
-        <!-- Selected Impact (Case Studies) -->
+        <!-- Selected Impact (Case Studies with Lucide Icons) -->
         <section id="initiatives" class="section">
             <div class="container">
                 <div class="section-header">
@@ -290,30 +362,37 @@
                 </div>
 
                 <div class="cases-container">
-                    <!-- Case 1: Pricing & Quoting -->
+                    <!-- Case 1: Pricing & Quoting (TrendingUp & Layers) -->
                     <div class="case-card">
                         <div class="case-header">
-                            <div class="case-headline-area">
-                                <span class="case-category">Revenue Management &amp; Quoting</span>
-                                <h3 class="case-title">Centralized Corporate International Quote Team &amp; Margin Guidance</h3>
+                            <div class="case-header-left">
+                                <div class="icon-box-md">
+                                    <i data-lucide="trending-up" style="width: 20px; height: 20px;"></i>
+                                </div>
+                                <div class="case-headline-area">
+                                    <span class="case-category">Revenue Management &amp; Quoting</span>
+                                    <h3 class="case-title">Centralized Corporate International Quote Team &amp; Margin Guidance</h3>
+                                </div>
                             </div>
-                            <span class="case-company-tag">SEKO Logistics</span>
+                            <span class="case-company-tag">
+                                <i data-lucide="building-2" style="width: 14px; height: 14px;"></i> SEKO Logistics
+                            </span>
                         </div>
                         <div class="case-body-grid">
                             <div class="case-column case-col-problem">
-                                <span class="case-col-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem</span>
+                                <span class="case-col-label"><i data-lucide="alert-triangle" style="width: 14px; height: 14px;"></i> Problem</span>
                                 <p class="case-col-content">
                                     Decentralized international quoting lacked standardized margin control, leading to inconsistent pricing, margin leakage, and limited visibility into win/loss performance.
                                 </p>
                             </div>
                             <div class="case-column case-col-action">
-                                <span class="case-col-label"><i class="fa-solid fa-wrench"></i> What I Did</span>
+                                <span class="case-col-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> What I Did</span>
                                 <p class="case-col-content">
                                     Managed the Corporate International quote team, partnering with product leadership on margin guidance and win/loss analysis using Magaya and WebCargo.
                                 </p>
                             </div>
                             <div class="case-column case-col-outcome">
-                                <span class="case-col-label"><i class="fa-solid fa-circle-check"></i> Outcome</span>
+                                <span class="case-col-label"><i data-lucide="circle-check" style="width: 14px; height: 14px;"></i> Outcome</span>
                                 <p class="case-col-content">
                                     Established structured quoting governance, protected gross margins, and provided real-time pricing intelligence to commercial leadership.
                                 </p>
@@ -324,30 +403,37 @@
                         </div>
                     </div>
 
-                    <!-- Case 2: CRM Restructuring -->
+                    <!-- Case 2: CRM Restructuring (LayoutDashboard & Database) -->
                     <div class="case-card">
                         <div class="case-header">
-                            <div class="case-headline-area">
-                                <span class="case-category">CRM Strategy &amp; Administration</span>
-                                <h3 class="case-title">Microsoft Dynamics 365 Architecture &amp; 39,000+ Record Matching</h3>
+                            <div class="case-header-left">
+                                <div class="icon-box-md">
+                                    <i data-lucide="layout-dashboard" style="width: 20px; height: 20px;"></i>
+                                </div>
+                                <div class="case-headline-area">
+                                    <span class="case-category">CRM Strategy &amp; Administration</span>
+                                    <h3 class="case-title">Microsoft Dynamics 365 Architecture &amp; 39,000+ Record Matching</h3>
+                                </div>
                             </div>
-                            <span class="case-company-tag">PGL (Perimeter Global Logistics)</span>
+                            <span class="case-company-tag">
+                                <i data-lucide="building-2" style="width: 14px; height: 14px;"></i> PGL (Perimeter Global Logistics)
+                            </span>
                         </div>
                         <div class="case-body-grid">
                             <div class="case-column case-col-problem">
-                                <span class="case-col-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem</span>
+                                <span class="case-col-label"><i data-lucide="alert-triangle" style="width: 14px; height: 14px;"></i> Problem</span>
                                 <p class="case-col-content">
                                     Over 39,000 unorganized prospect records in Microsoft Dynamics 365 caused data duplication, unclear lead routing, and low commercial visibility across sales pipelines.
                                 </p>
                             </div>
                             <div class="case-column case-col-action">
-                                <span class="case-col-label"><i class="fa-solid fa-wrench"></i> What I Did</span>
+                                <span class="case-col-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> What I Did</span>
                                 <p class="case-col-content">
                                     Owned CRM strategy and operations on Microsoft Dynamics 365, including lead pipeline management, segmentation, and large-scale prospect-to-CRM matching across 39,000+ records.
                                 </p>
                             </div>
                             <div class="case-column case-col-outcome">
-                                <span class="case-col-label"><i class="fa-solid fa-circle-check"></i> Outcome</span>
+                                <span class="case-col-label"><i data-lucide="circle-check" style="width: 14px; height: 14px;"></i> Outcome</span>
                                 <p class="case-col-content">
                                     Restructured the CRM environment into a reliable foundation for sales targeting, lead segmentation, and commercial executive reporting.
                                 </p>
@@ -358,30 +444,37 @@
                         </div>
                     </div>
 
-                    <!-- Case 3: Client Onboarding Framework -->
+                    <!-- Case 3: Client Onboarding Framework (ClipboardList & Building2) -->
                     <div class="case-card">
                         <div class="case-header">
-                            <div class="case-headline-area">
-                                <span class="case-category">M&amp;A Integration &amp; Client Success</span>
-                                <h3 class="case-title">Transition &amp; Implementation Program for Strategic Accounts</h3>
+                            <div class="case-header-left">
+                                <div class="icon-box-md">
+                                    <i data-lucide="clipboard-list" style="width: 20px; height: 20px;"></i>
+                                </div>
+                                <div class="case-headline-area">
+                                    <span class="case-category">M&amp;A Integration &amp; Client Success</span>
+                                    <h3 class="case-title">Transition &amp; Implementation Program for Strategic Accounts</h3>
+                                </div>
                             </div>
-                            <span class="case-company-tag">SEKO Logistics</span>
+                            <span class="case-company-tag">
+                                <i data-lucide="building-2" style="width: 14px; height: 14px;"></i> SEKO Logistics
+                            </span>
                         </div>
                         <div class="case-body-grid">
                             <div class="case-column case-col-problem">
-                                <span class="case-col-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem</span>
+                                <span class="case-col-label"><i data-lucide="alert-triangle" style="width: 14px; height: 14px;"></i> Problem</span>
                                 <p class="case-col-content">
                                     Acquired logistics companies and major enterprise client wins needed a formalized framework to prevent churn and integrate smoothly into network operations.
                                 </p>
                             </div>
                             <div class="case-column case-col-action">
-                                <span class="case-col-label"><i class="fa-solid fa-wrench"></i> What I Did</span>
+                                <span class="case-col-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> What I Did</span>
                                 <p class="case-col-content">
                                     Led commercial integration of acquisitions to maximize synergy realization, and created the Transition &amp; Implementation program for onboarding new accounts and Strategic Partners into the SEKO network.
                                 </p>
                             </div>
                             <div class="case-column case-col-outcome">
-                                <span class="case-col-label"><i class="fa-solid fa-circle-check"></i> Outcome</span>
+                                <span class="case-col-label"><i data-lucide="circle-check" style="width: 14px; height: 14px;"></i> Outcome</span>
                                 <p class="case-col-content">
                                     Ensured acquired entities were rapidly absorbed into the commercial organization and accelerated successful account go-lives across the network.
                                 </p>
@@ -392,30 +485,37 @@
                         </div>
                     </div>
 
-                    <!-- Case 4: Enablement Academy -->
+                    <!-- Case 4: Enablement Academy (GraduationCap & UsersRound) -->
                     <div class="case-card">
                         <div class="case-header">
-                            <div class="case-headline-area">
-                                <span class="case-category">Sales Enablement &amp; Team Building</span>
-                                <h3 class="case-title">BDR Program Launch &amp; 60%+ CRM Adoption Transformation</h3>
+                            <div class="case-header-left">
+                                <div class="icon-box-md">
+                                    <i data-lucide="graduation-cap" style="width: 20px; height: 20px;"></i>
+                                </div>
+                                <div class="case-headline-area">
+                                    <span class="case-category">Sales Enablement &amp; Team Building</span>
+                                    <h3 class="case-title">BDR Program Launch &amp; 60%+ CRM Adoption Transformation</h3>
+                                </div>
                             </div>
-                            <span class="case-company-tag">SEKO Logistics</span>
+                            <span class="case-company-tag">
+                                <i data-lucide="building-2" style="width: 14px; height: 14px;"></i> SEKO Logistics
+                            </span>
                         </div>
                         <div class="case-body-grid">
                             <div class="case-column case-col-problem">
-                                <span class="case-col-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem</span>
+                                <span class="case-col-label"><i data-lucide="alert-triangle" style="width: 14px; height: 14px;"></i> Problem</span>
                                 <p class="case-col-content">
                                     Lack of structured inside sales lead generation and historically low CRM utilization across regional and branch sales teams.
                                 </p>
                             </div>
                             <div class="case-column case-col-action">
-                                <span class="case-col-label"><i class="fa-solid fa-wrench"></i> What I Did</span>
+                                <span class="case-col-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> What I Did</span>
                                 <p class="case-col-content">
                                     Launched and managed SEKO's BDR program from scratch (scripts, cadences, KPIs); partnered with vendor on tool redesign to drive adoption; delivered new-hire sales training (Freight Forwarding 101).
                                 </p>
                             </div>
                             <div class="case-column case-col-outcome">
-                                <span class="case-col-label"><i class="fa-solid fa-circle-check"></i> Outcome</span>
+                                <span class="case-col-label"><i data-lucide="circle-check" style="width: 14px; height: 14px;"></i> Outcome</span>
                                 <p class="case-col-content">
                                     Increased sales performance visibility by 100%, grew CRM adoption from low engagement to 60%+ usage, and earned the 2018 SEKO Logistics Service Excellence Award.
                                 </p>
@@ -426,30 +526,37 @@
                         </div>
                     </div>
 
-                    <!-- Case 5: EDI Billing Optimization -->
+                    <!-- Case 5: EDI Billing Optimization (Globe & Workflow) -->
                     <div class="case-card">
                         <div class="case-header">
-                            <div class="case-headline-area">
-                                <span class="case-category">Global Business Process Improvement</span>
-                                <h3 class="case-title">Global EDI Billing Process Design &amp; 50% Cycle Time Reduction</h3>
+                            <div class="case-header-left">
+                                <div class="icon-box-md">
+                                    <i data-lucide="globe" style="width: 20px; height: 20px;"></i>
+                                </div>
+                                <div class="case-headline-area">
+                                    <span class="case-category">Global Business Process Improvement</span>
+                                    <h3 class="case-title">Global EDI Billing Process Design &amp; 50% Cycle Time Reduction</h3>
+                                </div>
                             </div>
-                            <span class="case-company-tag">Expeditors International</span>
+                            <span class="case-company-tag">
+                                <i data-lucide="building-2" style="width: 14px; height: 14px;"></i> Expeditors International
+                            </span>
                         </div>
                         <div class="case-body-grid">
                             <div class="case-column case-col-problem">
-                                <span class="case-col-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem</span>
+                                <span class="case-col-label"><i data-lucide="alert-triangle" style="width: 14px; height: 14px;"></i> Problem</span>
                                 <p class="case-col-content">
                                     Complex electronic billing requests took extended deployment timelines and required improved global invoicing accuracy.
                                 </p>
                             </div>
                             <div class="case-column case-col-action">
-                                <span class="case-col-label"><i class="fa-solid fa-wrench"></i> What I Did</span>
+                                <span class="case-col-label"><i data-lucide="wrench" style="width: 14px; height: 14px;"></i> What I Did</span>
                                 <p class="case-col-content">
                                     Designed an EDI billing process from request through deployment, served on the Global Billing Initiative core team, and delivered global training on Effective Problem Solving and Process Mapping.
                                 </p>
                             </div>
                             <div class="case-column case-col-outcome">
-                                <span class="case-col-label"><i class="fa-solid fa-circle-check"></i> Outcome</span>
+                                <span class="case-col-label"><i data-lucide="circle-check" style="width: 14px; height: 14px;"></i> Outcome</span>
                                 <p class="case-col-content">
                                     Reduced average project timeline by 50% and supported the initiative reaching 88.8% invoicing quality globally by March 2015.
                                 </p>
@@ -463,7 +570,7 @@
             </div>
         </section>
 
-        <!-- Experience Timeline Section -->
+        <!-- Experience Timeline Section (Lucide Icons: Building2, Calendar, MapPin, Globe) -->
         <section id="experience" class="section section-alt">
             <div class="container">
                 <div class="section-header">
@@ -485,12 +592,18 @@
                     <div class="experience-card" data-category="pgl">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">PGL (Perimeter Global Logistics)</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> PGL (Perimeter Global Logistics)
+                                </span>
                                 <h3 class="experience-title">Director of Commercial Strategy and Operations</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Aug 2024 – Apr 2026</span>
-                                <span class="experience-location"><i class="fa-solid fa-location-dot"></i> Franklin Park, IL</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Aug 2024 – Apr 2026
+                                </span>
+                                <span class="experience-location">
+                                    <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i> Franklin Park, IL
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -506,12 +619,18 @@
                     <div class="experience-card" data-category="seko">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">SEKO Logistics</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> SEKO Logistics
+                                </span>
                                 <h3 class="experience-title">Global Commercial Ops Director</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Jan 2023 – Jun 2024</span>
-                                <span class="experience-location"><i class="fa-solid fa-globe"></i> Global Scope</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Jan 2023 – Jun 2024
+                                </span>
+                                <span class="experience-location">
+                                    <i data-lucide="globe" style="width: 14px; height: 14px;"></i> Global Scope
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -528,11 +647,15 @@
                     <div class="experience-card" data-category="seko">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">SEKO Logistics</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> SEKO Logistics
+                                </span>
                                 <h3 class="experience-title">Commercial Field Sales Director</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Nov 2016 – Dec 2022</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Nov 2016 – Dec 2022
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -551,11 +674,15 @@
                     <div class="experience-card" data-category="expeditors">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">Expeditors International</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> Expeditors International
+                                </span>
                                 <h3 class="experience-title">Customer Solutions Manager, Midwest Region</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Jan 2015 – Oct 2016</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Jan 2015 – Oct 2016
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -568,11 +695,15 @@
                     <div class="experience-card" data-category="expeditors">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">Expeditors International</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> Expeditors International
+                                </span>
                                 <h3 class="experience-title">Global Business Process Improvement Manager</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Jan 2012 – Dec 2014</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Jan 2012 – Dec 2014
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -586,11 +717,15 @@
                     <div class="experience-card" data-category="expeditors">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">Expeditors International</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> Expeditors International
+                                </span>
                                 <h3 class="experience-title">Midwest Regional Process Improvement Manager</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Jan 2006 – Dec 2011</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Jan 2006 – Dec 2011
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -604,11 +739,15 @@
                     <div class="experience-card" data-category="expeditors">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">Expeditors International</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> Expeditors International
+                                </span>
                                 <h3 class="experience-title">Account Management &amp; Operational Roles</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Jan 1993 – Dec 2005</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Jan 1993 – Dec 2005
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -623,11 +762,15 @@
                     <div class="experience-card" data-category="other">
                         <div class="experience-header">
                             <div class="experience-role-info">
-                                <span class="experience-company">Hamilton Partners</span>
+                                <span class="experience-company">
+                                    <i data-lucide="building-2" style="width: 18px; height: 18px; color: var(--accent-teal);"></i> Hamilton Partners
+                                </span>
                                 <h3 class="experience-title">General Manager</h3>
                             </div>
                             <div class="experience-meta">
-                                <span class="experience-date">Jan 1996 – Dec 1998</span>
+                                <span class="experience-date">
+                                    <i data-lucide="calendar" style="width: 13px; height: 13px; margin-right: 4px;"></i> Jan 1996 – Dec 1998
+                                </span>
                             </div>
                         </div>
                         <ul class="experience-bullets">
@@ -638,7 +781,7 @@
             </div>
         </section>
 
-        <!-- Applied AI & Automation Section (Secondary & Grounded) -->
+        <!-- Applied AI & Automation Section (Lucide Icons: Bot, Brain, Workflow, Sparkles) -->
         <section id="ai-automation" class="section">
             <div class="container">
                 <div class="section-header">
@@ -655,7 +798,9 @@
 
                 <div class="ai-grid">
                     <div class="ai-card">
-                        <div class="ai-card-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div class="ai-card-icon">
+                            <i data-lucide="brain" style="width: 22px; height: 22px;"></i>
+                        </div>
                         <h3 class="ai-card-title">Commercial Data Enrichment</h3>
                         <p class="ai-card-desc">
                             Automating lead scoring, firmographic enrichment, and prospect classification to keep CRM data clean and actionable for sales reps without manual entry fatigue.
@@ -663,7 +808,9 @@
                     </div>
 
                     <div class="ai-card">
-                        <div class="ai-card-icon"><i class="fa-solid fa-file-lines"></i></div>
+                        <div class="ai-card-icon">
+                            <i data-lucide="bot" style="width: 22px; height: 22px;"></i>
+                        </div>
                         <h3 class="ai-card-title">Intelligent SOP &amp; Playbook Extraction</h3>
                         <p class="ai-card-desc">
                             Leveraging AI tools to rapidly structure raw process recordings, interview notes, and workflows into crisp, standardized operational documentation.
@@ -671,7 +818,9 @@
                     </div>
 
                     <div class="ai-card">
-                        <div class="ai-card-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+                        <div class="ai-card-icon">
+                            <i data-lucide="workflow" style="width: 22px; height: 22px;"></i>
+                        </div>
                         <h3 class="ai-card-title">Workflow &amp; Quote Routing Automation</h3>
                         <p class="ai-card-desc">
                             Building streamlined routing rules and triage systems that ensure inquiries, bids, and client escalations instantly reach the right desk with all needed context.
@@ -681,7 +830,7 @@
             </div>
         </section>
 
-        <!-- Technology Stack Section (De-emphasized, Clean) -->
+        <!-- Technology Stack Section (Lucide Icons: Database, TrendingUp, Package, Workflow) -->
         <section id="tech-stack" class="section section-alt">
             <div class="container">
                 <div class="section-header">
@@ -691,7 +840,7 @@
 
                 <div class="stack-grid">
                     <div class="stack-category-card">
-                        <h3 class="stack-category-title"><i class="fa-solid fa-database"></i> Enterprise CRM</h3>
+                        <h3 class="stack-category-title"><i data-lucide="database"></i> Enterprise CRM</h3>
                         <ul class="stack-item-list">
                             <li>Microsoft Dynamics 365 <span class="tool-badge">Admin</span></li>
                             <li>Salesforce CRM <span class="tool-badge">Admin</span></li>
@@ -701,7 +850,7 @@
                     </div>
 
                     <div class="stack-category-card">
-                        <h3 class="stack-category-title"><i class="fa-solid fa-chart-line"></i> BI &amp; Analytics</h3>
+                        <h3 class="stack-category-title"><i data-lucide="trending-up"></i> BI &amp; Analytics</h3>
                         <ul class="stack-item-list">
                             <li>Microsoft Power BI <span class="tool-badge">Advanced</span></li>
                             <li>Real-Time Revenue Management</li>
@@ -711,7 +860,7 @@
                     </div>
 
                     <div class="stack-category-card">
-                        <h3 class="stack-category-title"><i class="fa-solid fa-boxes-stacked"></i> Logistics &amp; Quoting</h3>
+                        <h3 class="stack-category-title"><i data-lucide="package"></i> Logistics &amp; Quoting</h3>
                         <ul class="stack-item-list">
                             <li>CargoWise / Logixboard / NEO</li>
                             <li>Magaya &amp; WebCargo</li>
@@ -721,7 +870,7 @@
                     </div>
 
                     <div class="stack-category-card">
-                        <h3 class="stack-category-title"><i class="fa-solid fa-network-wired"></i> Process &amp; Integration</h3>
+                        <h3 class="stack-category-title"><i data-lucide="workflow"></i> Process &amp; Integration</h3>
                         <ul class="stack-item-list">
                             <li>EDI &amp; System Integration</li>
                             <li>Billing Workflow Design</li>
@@ -733,7 +882,7 @@
             </div>
         </section>
 
-        <!-- Credentials & Education Section -->
+        <!-- Credentials & Education Section (Lucide Icons: Award, GraduationCap) -->
         <section id="credentials" class="section">
             <div class="container">
                 <div class="section-header">
@@ -744,7 +893,9 @@
                 <div class="credentials-grid">
                     <div class="cred-card">
                         <div class="cred-header">
-                            <div class="cred-icon"><i class="fa-solid fa-award"></i></div>
+                            <div class="icon-box-lg">
+                                <i data-lucide="award" style="width: 24px; height: 24px;"></i>
+                            </div>
                             <div class="cred-title-box">
                                 <h3>Janek Performance Group</h3>
                                 <span>Certified Across 5 Core Sales Methodologies</span>
@@ -761,15 +912,15 @@
 
                     <div class="cred-sub-grid">
                         <div class="cred-mini-card">
-                            <h4>Colorado State University</h4>
+                            <h4><i data-lucide="graduation-cap"></i> Colorado State University</h4>
                             <p>Higher education academic foundation supporting business process improvement, leadership, and operational management.</p>
                         </div>
                         <div class="cred-mini-card">
-                            <h4>Lean &amp; Six Sigma</h4>
+                            <h4><i data-lucide="layers"></i> Lean &amp; Six Sigma</h4>
                             <p>Lean Enterprise–trained in root cause analysis, value stream mapping, and continuous improvement fundamentals.</p>
                         </div>
                         <div class="cred-mini-card">
-                            <h4>Service Excellence Award</h4>
+                            <h4><i data-lucide="award"></i> Service Excellence Award</h4>
                             <p>SEKO Logistics (2018) – Recognized for outstanding leadership, field sales support, and organizational contribution.</p>
                         </div>
                     </div>
@@ -777,7 +928,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section (Lucide Icons: Mail, Linkedin, MapPin, Copy) -->
         <section id="contact" class="section section-cool">
             <div class="container">
                 <div class="contact-card-wrapper">
@@ -793,20 +944,24 @@
 
                             <div class="contact-direct-items">
                                 <div class="contact-item">
-                                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                    <div class="contact-icon">
+                                        <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+                                    </div>
                                     <div>
                                         <div class="contact-meta-label">Direct Email</div>
                                         <div style="display: flex; align-items: center;">
                                             <a href="mailto:krostan68@yahoo.com" class="contact-meta-value">krostan68@yahoo.com</a>
                                             <button id="copyEmailBtn" class="copy-btn" title="Copy Email" aria-label="Copy Email Address">
-                                                <i class="fa-regular fa-copy"></i>
+                                                <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="contact-item">
-                                    <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                    <div class="contact-icon">
+                                        <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                                    </div>
                                     <div>
                                         <div class="contact-meta-label">LinkedIn Profile</div>
                                         <a href="https://www.linkedin.com/in/kristyn-r-0410915/" target="_blank" rel="noopener noreferrer" class="contact-meta-value">
@@ -816,7 +971,9 @@
                                 </div>
 
                                 <div class="contact-item">
-                                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="contact-icon">
+                                        <i data-lucide="map-pin" style="width: 20px; height: 20px;"></i>
+                                    </div>
                                     <div>
                                         <div class="contact-meta-label">Location / Work Preference</div>
                                         <span class="contact-meta-value" style="font-weight: 500; font-size: 0.9rem;">Greater Chicago Area | Remote | Selective Relocation</span>
@@ -840,10 +997,10 @@
                                 <textarea id="message" name="message" rows="4" required placeholder="Hi Kristyn, I would love to connect regarding an opportunity..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
-                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                                Send Message <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
                             </button>
                             <div id="formSuccess" class="form-success-msg hidden">
-                                <i class="fa-solid fa-circle-check"></i> Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.
+                                <i data-lucide="circle-check" style="width: 18px; height: 18px;"></i> Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.
                             </div>
                         </form>
                     </div>
@@ -854,17 +1011,13 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <div class="avatar-mini">KR</div>
-                <span>Kristyn Rostan</span>
-            </div>
-            <div>
-                &copy; 2026 Kristyn Rostan. All rights reserved.
-            </div>
-            <div>
-                <a href="#hero">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
-            </div>
+        <div class="max-w-[1180px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748B] gap-3">
+          <div class="flex items-center gap-2.5 font-bold text-[#172033]">
+            <div class="w-7 h-7 rounded-[4px] bg-[#168C8C] text-white flex items-center justify-center text-xs">KR</div>
+            <span>Kristyn Rostan</span>
+          </div>
+          <div>&copy; 2026 Kristyn Rostan. All rights reserved.</div>
+          <div><a href="#hero" class="text-[#168C8C] hover:underline flex items-center gap-1">Back to Top <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i></a></div>
         </div>
     </footer>
 

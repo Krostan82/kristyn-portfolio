@@ -1,8 +1,14 @@
 /**
  * Kristyn Rostan - Executive Portfolio Interactive Logic
+ * With Lucide Icons Integration
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Initialize Lucide Icons
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+    }
+
     // 1. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
@@ -12,8 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('open');
             const isOpen = navMenu.classList.contains('open');
             mobileMenuBtn.innerHTML = isOpen 
-                ? '<i class="fa-solid fa-xmark"></i>' 
-                : '<i class="fa-solid fa-bars"></i>';
+                ? '<i data-lucide="x" style="width: 20px; height: 20px;"></i>' 
+                : '<i data-lucide="menu" style="width: 20px; height: 20px;"></i>';
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
         });
 
         // Close menu when a link is clicked
@@ -21,7 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
-                mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" style="width: 20px; height: 20px;"></i>';
+                if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                    lucide.createIcons();
+                }
             });
         });
     }
@@ -75,18 +87,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. One-Click Copy Email
+    // 4. One-Click Copy Email with Lucide Check Icon
     const copyEmailBtn = document.getElementById('copyEmailBtn');
     if (copyEmailBtn) {
         copyEmailBtn.addEventListener('click', () => {
             const email = 'krostan68@yahoo.com';
             navigator.clipboard.writeText(email).then(() => {
                 const originalHtml = copyEmailBtn.innerHTML;
-                copyEmailBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #168C8C;"></i>';
+                copyEmailBtn.innerHTML = '<i data-lucide="check" style="width: 14px; height: 14px; color: #168C8C;"></i>';
                 copyEmailBtn.title = 'Email copied!';
+                if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                    lucide.createIcons();
+                }
                 setTimeout(() => {
                     copyEmailBtn.innerHTML = originalHtml;
                     copyEmailBtn.title = 'Copy Email';
+                    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                        lucide.createIcons();
+                    }
                 }, 2500);
             }).catch(err => {
                 console.error('Failed to copy: ', err);
@@ -107,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (formSuccess) {
                 formSuccess.classList.remove('hidden');
+                if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                    lucide.createIcons();
+                }
             }
 
             const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);

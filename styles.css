@@ -73,6 +73,55 @@ body {
     overflow-x: hidden;
 }
 
+/* Lucide Icon Defaults */
+.lucide, [data-lucide] {
+    display: inline-block;
+    vertical-align: middle;
+    stroke-width: 1.85px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+/* Icon Box Containers */
+.icon-box-lg {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-teal-subtle);
+    border: 1px solid var(--accent-teal-border);
+    color: var(--accent-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-box-md {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-teal-subtle);
+    border: 1px solid var(--accent-teal-border);
+    color: var(--accent-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-box-sm {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-teal-subtle);
+    color: var(--accent-teal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
 /* Typography Defaults */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
@@ -425,7 +474,9 @@ a:hover {
     background-color: #FFFFFF;
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
-    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-icon:hover {
@@ -517,7 +568,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   What I Do Best (4 Clean Pillars)
+   What I Do Best (4 Clean Pillars with Lucide Icons)
    ========================================================================== */
 .pillars-grid {
     display: grid;
@@ -542,23 +593,18 @@ a:hover {
     border-color: var(--accent-teal-border);
 }
 
+.pillar-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
 .pillar-number {
     font-family: var(--font-heading);
     font-size: 1.125rem;
     font-weight: 700;
-    color: var(--accent-teal);
-    margin-bottom: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.pillar-number::after {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 2px;
-    background-color: var(--accent-teal-border);
+    color: var(--text-muted);
 }
 
 .pillar-title {
@@ -582,7 +628,7 @@ a:hover {
     border-top: 1px solid var(--border-subtle);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .pillar-points li {
@@ -590,19 +636,20 @@ a:hover {
     color: var(--text-secondary);
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 10px;
     line-height: 1.5;
 }
 
-.pillar-points li i {
+.pillar-points li .lucide {
     color: var(--accent-teal);
-    font-size: 0.8rem;
-    margin-top: 4px;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
     flex-shrink: 0;
 }
 
 /* ==========================================================================
-   How I Work (7-Step Visual Process Pipeline)
+   How I Work (7-Step Visual Process Pipeline with Lucide Icons)
    ========================================================================== */
 .process-callout {
     background-color: #FFFFFF;
@@ -625,10 +672,12 @@ a:hover {
     background-color: var(--bg-surface-subtle);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
-    padding: 18px 12px;
+    padding: 20px 10px;
     text-align: center;
     transition: all var(--transition-fast);
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .process-step:hover {
@@ -637,13 +686,17 @@ a:hover {
     transform: translateY(-2px);
 }
 
+.process-step-icon-wrapper {
+    margin-bottom: 10px;
+}
+
 .step-num {
-    font-size: 0.75rem;
+    font-size: 0.725rem;
     font-weight: 700;
     color: var(--accent-teal);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 .step-name {
@@ -654,7 +707,7 @@ a:hover {
 }
 
 .step-desc {
-    font-size: 0.775rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     line-height: 1.35;
 }
@@ -779,7 +832,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Selected Impact (Case Study Blocks)
+   Selected Impact (Case Study Blocks with Categorized Lucide Icons)
    ========================================================================== */
 .cases-container {
     display: flex;
@@ -811,6 +864,12 @@ a:hover {
     gap: 16px;
 }
 
+.case-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
 .case-headline-area {
     display: flex;
     flex-direction: column;
@@ -840,6 +899,9 @@ a:hover {
     padding: 4px 12px;
     border-radius: var(--radius-full);
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .case-body-grid {
@@ -966,6 +1028,9 @@ a:hover {
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .experience-title {
@@ -994,6 +1059,9 @@ a:hover {
 .experience-location {
     font-size: 0.8125rem;
     color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .experience-bullets {
@@ -1059,15 +1127,15 @@ a:hover {
 }
 
 .ai-card-icon {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-sm);
     background-color: var(--bg-teal-subtle);
+    border: 1px solid var(--accent-teal-border);
     color: var(--accent-teal);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
     margin-bottom: 16px;
 }
 
@@ -1111,9 +1179,10 @@ a:hover {
     gap: 8px;
 }
 
-.stack-category-title i {
+.stack-category-title .lucide {
     color: var(--accent-teal);
-    font-size: 0.9rem;
+    width: 18px;
+    height: 18px;
 }
 
 .stack-item-list {
@@ -1164,19 +1233,6 @@ a:hover {
     margin-bottom: 16px;
 }
 
-.cred-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-sm);
-    background-color: var(--bg-teal-subtle);
-    color: var(--accent-teal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    flex-shrink: 0;
-}
-
 .cred-title-box h3 {
     font-size: 1.15rem;
     color: var(--text-primary);
@@ -1222,6 +1278,15 @@ a:hover {
     font-size: 1rem;
     margin-bottom: 4px;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cred-mini-card h4 .lucide {
+    color: var(--accent-teal);
+    width: 16px;
+    height: 16px;
 }
 
 .cred-mini-card p {
@@ -1266,15 +1331,15 @@ a:hover {
 }
 
 .contact-icon {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-sm);
     background-color: var(--bg-teal-subtle);
+    border: 1px solid var(--accent-teal-border);
     color: var(--accent-teal);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
     flex-shrink: 0;
 }
 
@@ -1302,6 +1367,9 @@ a:hover {
     font-size: 0.85rem;
     margin-left: 8px;
     transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .copy-btn:hover {
