@@ -979,29 +979,66 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Option 2: Schedule a Conversation -->
+                            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #E2E4E9;">
+                                <div style="background-color: #FAF9F6; border: 1px solid #E2E4E9; border-radius: 12px; padding: 20px;">
+                                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #168C8C; margin-bottom: 6px;">
+                                        <i data-lucide="calendar-days" style="width: 16px; height: 16px;"></i>
+                                        <span>Option 2 &bull; Prefer to talk?</span>
+                                    </div>
+                                    <h3 style="font-size: 0.95rem; font-weight: 700; color: #172033; margin-bottom: 4px;">Schedule a Conversation</h3>
+                                    <p style="font-size: 0.8rem; color: #475467; line-height: 1.5; margin-bottom: 14px;">
+                                        Schedule a brief conversation at a time that works for you.
+                                    </p>
+                                    <button
+                                        type="button"
+                                        id="calScheduleBtn"
+                                        data-cal-namespace="30-minute-conversation"
+                                        data-cal-link="kris-rostan-5pou9u/30-minute-conversation"
+                                        data-cal-config='{"layout":"month_view","theme":"light"}'
+                                        class="btn btn-primary"
+                                        style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; font-size: 0.875rem;"
+                                    >
+                                        <i data-lucide="calendar" style="width: 16px; height: 16px;"></i>
+                                        <span>Schedule a Conversation</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Contact Form -->
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                        <!-- Right Column: Option 1: Send a Message -->
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #E2E4E9;">
+                                <div>
+                                    <span style="font-size: 0.675rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #168C8C;">Option 1</span>
+                                    <h3 style="font-size: 1rem; font-weight: 700; color: #172033; margin: 0;">Send a Message</h3>
+                                </div>
+                                <span style="font-size: 0.7rem; color: #64748B;">All fields required</span>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" required placeholder="jane@company.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" required placeholder="Hi Kristyn, I would love to connect regarding an opportunity..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">
-                                Send Message <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i>
-                            </button>
-                            <div id="formSuccess" class="form-success-msg hidden">
-                                <i data-lucide="circle-check" style="width: 16px; height: 16px;"></i> Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.
-                            </div>
-                        </form>
+
+                            <!-- Contact Form -->
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="jane@company.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="4" required placeholder="Hi Kristyn, I would love to connect regarding an opportunity..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">
+                                    Send Message <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i>
+                                </button>
+                                <div id="formSuccess" class="form-success-msg hidden">
+                                    <i data-lucide="circle-check" style="width: 16px; height: 16px;"></i> Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1021,5 +1058,11 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Cal.com Official Embed -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "30-minute-conversation", {origin:"https://cal.com"});
+      Cal.ns["30-minute-conversation"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#168C8C"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
 </body>
 </html>

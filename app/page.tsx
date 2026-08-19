@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 import {
   Briefcase,
   Layers,
@@ -10,6 +11,7 @@ import {
   Linkedin,
   MapPin,
   Calendar,
+  CalendarDays,
   GraduationCap,
   Copy,
   Check,
@@ -46,6 +48,41 @@ export default function Home() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [formFeedback, setFormFeedback] = useState<string>("");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  useEffect(() => {
+    (async function () {
+      try {
+        const cal = await getCalApi({ namespace: "30-minute-conversation" });
+        cal("ui", {
+          theme: "light",
+          styles: {
+            branding: {
+              brandColor: "#168C8C",
+            },
+          },
+          hideEventTypeDetails: false,
+          layout: "month_view",
+        });
+      } catch (e) {
+        console.error("Cal.com embed error:", e);
+      }
+    })();
+  }, []);
+
+  const handleOpenCal = async () => {
+    try {
+      const cal = await getCalApi({ namespace: "30-minute-conversation" });
+      cal("modal", {
+        calLink: "kris-rostan-5pou9u/30-minute-conversation",
+        config: {
+          layout: "month_view",
+          theme: "light",
+        },
+      });
+    } catch (e) {
+      window.open("https://cal.com/kris-rostan-5pou9u/30-minute-conversation", "_blank");
+    }
+  };
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("krostan68@yahoo.com");
@@ -1003,152 +1040,190 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section (Lucide Icons: Mail, Linkedin, MapPin, Copy) */}
+        {/* Contact Section (Lucide Icons: Mail, Linkedin, MapPin, Copy, Calendar) */}
         <section id="contact" className="py-16 bg-[#EEF3F5] border-t border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 md:p-10 shadow-sm">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div>
-                  <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Let's Connect</span>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Ready to Transform Your Commercial Operations?</h2>
-                  <p className="text-xs md:text-sm text-[#475467] leading-relaxed mb-5">
-                    Exploring senior commercial operations and transformation roles in logistics, supply chain, and adjacent tech/consulting practices. Open to Chicago-based, remote, and selective relocation.
-                  </p>
+                {/* Left Column: Direct Details & Option 2: Schedule a Conversation */}
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Let's Connect</span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Ready to Transform Your Commercial Operations?</h2>
+                    <p className="text-xs md:text-sm text-[#475467] leading-relaxed mb-5">
+                      Exploring senior commercial operations and transformation roles in logistics, supply chain, and adjacent tech/consulting practices. Open to Chicago-based, remote, and selective relocation.
+                    </p>
 
-                  <div className="space-y-3.5 my-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-4 h-4" />
+                    <div className="space-y-3.5 my-5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                          <Mail className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">Direct Email</div>
+                          <div className="flex items-center gap-1.5">
+                            <a href="mailto:krostan68@yahoo.com" className="font-semibold text-xs sm:text-sm text-[#172033] hover:text-[#168C8C]">
+                              krostan68@yahoo.com
+                            </a>
+                            <button
+                              onClick={handleCopyEmail}
+                              className="p-1 rounded text-[#64748B] hover:text-[#168C8C] hover:bg-[#E9F4F4] transition-colors"
+                              title="Copy Email"
+                            >
+                              {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#168C8C]" /> : <Copy className="w-3.5 h-3.5" />}
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">Direct Email</div>
-                        <div className="flex items-center gap-1.5">
-                          <a href="mailto:krostan68@yahoo.com" className="font-semibold text-xs sm:text-sm text-[#172033] hover:text-[#168C8C]">
-                            krostan68@yahoo.com
-                          </a>
-                          <button
-                            onClick={handleCopyEmail}
-                            className="p-1 rounded text-[#64748B] hover:text-[#168C8C] hover:bg-[#E9F4F4] transition-colors"
-                            title="Copy Email"
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                          <Linkedin className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">LinkedIn Profile</div>
+                          <a
+                            href="https://www.linkedin.com/in/kristyn-r-0410915/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-xs sm:text-sm text-[#172033] hover:text-[#168C8C]"
                           >
-                            {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#168C8C]" /> : <Copy className="w-3.5 h-3.5" />}
-                          </button>
+                            linkedin.com/in/kristyn-r-0410915
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">Location / Work Preference</div>
+                          <span className="font-medium text-xs text-[#475467]">Greater Chicago Area | Remote | Selective Relocation</span>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                        <Linkedin className="w-4 h-4" />
+                  {/* Option 2: Schedule a Conversation */}
+                  <div className="mt-6 pt-5 border-t border-[#E2E4E9]">
+                    <div className="bg-[#FAF9F6] rounded-xl border border-[#E2E4E9] p-4 sm:p-5">
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#168C8C] mb-1">
+                        <CalendarDays className="w-4 h-4 text-[#168C8C]" />
+                        <span>Option 2 &bull; Prefer to talk?</span>
                       </div>
-                      <div>
-                        <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">LinkedIn Profile</div>
-                        <a
-                          href="https://www.linkedin.com/in/kristyn-r-0410915/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-semibold text-xs sm:text-sm text-[#172033] hover:text-[#168C8C]"
-                        >
-                          linkedin.com/in/kristyn-r-0410915
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">Location / Work Preference</div>
-                        <span className="font-medium text-xs text-[#475467]">Greater Chicago Area | Remote | Selective Relocation</span>
-                      </div>
+                      <h3 className="text-sm font-bold text-[#172033] mb-1">Schedule a Conversation</h3>
+                      <p className="text-xs text-[#475467] leading-relaxed mb-3.5">
+                        Schedule a brief conversation at a time that works for you.
+                      </p>
+                      <button
+                        type="button"
+                        data-cal-namespace="30-minute-conversation"
+                        data-cal-link="kris-rostan-5pou9u/30-minute-conversation"
+                        data-cal-config='{"layout":"month_view","theme":"light"}'
+                        onClick={handleOpenCal}
+                        className="w-full inline-flex items-center justify-center gap-2 bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-xs sm:text-sm py-2.5 px-4 rounded-[6px] transition-all hover:-translate-y-0.5 shadow-sm"
+                      >
+                        <Calendar className="w-4 h-4" />
+                        <span>Schedule a Conversation</span>
+                      </button>
                     </div>
                   </div>
                 </div>
 
-                {/* Form */}
-                <form onSubmit={handleFormSubmit} className="space-y-3.5" noValidate>
-                  <div>
-                    <label htmlFor="name" className="block text-xs font-bold text-[#172033] mb-1">
-                      Your Name <span className="text-[#0E6666]">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      placeholder="Jane Doe"
-                      disabled={formStatus === "submitting"}
-                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-xs font-bold text-[#172033] mb-1">
-                      Your Email <span className="text-[#0E6666]">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      placeholder="jane@company.com"
-                      disabled={formStatus === "submitting"}
-                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-bold text-[#172033] mb-1">
-                      Message <span className="text-[#0E6666]">*</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      required
-                      placeholder="Hi Kristyn, I would love to connect regarding an opportunity..."
-                      disabled={formStatus === "submitting"}
-                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
-                    ></textarea>
+                {/* Right Column: Option 1: Send a Message */}
+                <div>
+                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E2E4E9]">
+                    <div>
+                      <span className="text-[0.675rem] font-bold uppercase tracking-wider text-[#168C8C]">Option 1</span>
+                      <h3 className="text-sm sm:text-base font-bold text-[#172033]">Send a Message</h3>
+                    </div>
+                    <span className="text-[0.675rem] text-[#64748B]">All fields required</span>
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={formStatus === "submitting"}
-                    className="w-full bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-xs sm:text-sm py-3 rounded-[6px] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 shadow-sm"
-                  >
-                    {formStatus === "submitting" ? (
-                      <>
-                        <RefreshCw className="w-4 h-4 animate-spin" />
-                        <span>Sending Message...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Send Message</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </>
+                  <form onSubmit={handleFormSubmit} className="space-y-3.5" noValidate>
+                    <div>
+                      <label htmlFor="name" className="block text-xs font-bold text-[#172033] mb-1">
+                        Your Name <span className="text-[#0E6666]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                        placeholder="Jane Doe"
+                        disabled={formStatus === "submitting"}
+                        className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-xs font-bold text-[#172033] mb-1">
+                        Your Email <span className="text-[#0E6666]">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        placeholder="jane@company.com"
+                        disabled={formStatus === "submitting"}
+                        className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-xs font-bold text-[#172033] mb-1">
+                        Message <span className="text-[#0E6666]">*</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        required
+                        placeholder="Hi Kristyn, I would love to connect regarding an opportunity..."
+                        disabled={formStatus === "submitting"}
+                        className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={formStatus === "submitting"}
+                      className="w-full bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-xs sm:text-sm py-3 rounded-[6px] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 shadow-sm"
+                    >
+                      {formStatus === "submitting" ? (
+                        <>
+                          <RefreshCw className="w-4 h-4 animate-spin" />
+                          <span>Sending Message...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Send Message</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+
+                    {formStatus === "success" && (
+                      <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-3 rounded-[6px] flex items-center gap-2">
+                        <CircleCheck className="w-4 h-4 flex-shrink-0" />
+                        <span className="font-medium">{formFeedback || "Thank you. Your message has been sent."}</span>
+                      </div>
                     )}
-                  </button>
 
-                  {formStatus === "success" && (
-                    <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-3 rounded-[6px] flex items-center gap-2">
-                      <CircleCheck className="w-4 h-4 flex-shrink-0" />
-                      <span className="font-medium">{formFeedback || "Thank you. Your message has been sent."}</span>
-                    </div>
-                  )}
-
-                  {formStatus === "error" && (
-                    <div className="bg-[#FEF2F2] border border-[#EF4444]/30 text-[#B91C1C] text-xs p-3 rounded-[6px] flex items-center gap-2">
-                      <AlertTriangle className="w-4 h-4 flex-shrink-0" />
-                      <span className="font-medium">{formFeedback}</span>
-                    </div>
-                  )}
-                </form>
+                    {formStatus === "error" && (
+                      <div className="bg-[#FEF2F2] border border-[#EF4444]/30 text-[#B91C1C] text-xs p-3 rounded-[6px] flex items-center gap-2">
+                        <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+                        <span className="font-medium">{formFeedback}</span>
+                      </div>
+                    )}
+                  </form>
+                </div>
               </div>
             </div>
           </div>
