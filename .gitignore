@@ -1,0 +1,21 @@
+# Ignore resumes and personal PDF documents
+*.pdf
+*resume*
+*Resume*
+LInkedin Profile.pdf
+
+# Dependencies & Build artifacts
+node_modules/
+.next/
+dist/
+out/
+package-lock.json
+
+# IDE and agent metadata
+.agents/
+skills-lock.json
+.tempmediaStorage/
+*.bak
+.DS_Store
+Thumbs.db
+

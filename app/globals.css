@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200;
+  }
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent;
+}
+
+.glass-card {
+  @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/80 hover:border-slate-700/80 transition-all duration-300;
+}
