@@ -1,117 +1,120 @@
-/* ==========================================================================
-   Kristyn Rostan Portfolio - Interactive Script
-   ========================================================================== */
+/**
+ * Kristyn Rostan - Executive Portfolio Interactive Logic
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Theme Toggle Logic
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const body = document.body;
-
-    // Check saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
-    body.className = savedTheme;
-
-    themeToggleBtn.addEventListener('click', () => {
-        if (body.classList.contains('dark-theme')) {
-            body.classList.replace('dark-theme', 'light-theme');
-            localStorage.setItem('theme', 'light-theme');
-        } else {
-            body.classList.replace('light-theme', 'dark-theme');
-            localStorage.setItem('theme', 'dark-theme');
-        }
-    });
-
-    // 2. Mobile Menu Toggle
+    // 1. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
 
     if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.className = 'fa-solid fa-xmark';
-            } else {
-                icon.className = 'fa-solid fa-bars';
-            }
+            navMenu.classList.toggle('open');
+            const isOpen = navMenu.classList.contains('open');
+            mobileMenuBtn.innerHTML = isOpen 
+                ? '<i class="fa-solid fa-xmark"></i>' 
+                : '<i class="fa-solid fa-bars"></i>';
         });
 
-        // Close mobile menu when clicking a nav link
-        document.querySelectorAll('.nav-link').forEach(link => {
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars';
+                navMenu.classList.remove('open');
+                mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
             });
         });
     }
 
-    // 3. Experience Timeline Filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const timelineItems = document.querySelectorAll('.timeline-item');
+    // 2. Active Navigation Highlight on Scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-menu .nav-link');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+    function highlightActiveNav() {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 120;
+            const sectionId = current.getAttribute('id');
+
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${sectionId}`) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', highlightActiveNav, { passive: true });
+
+    // 3. Experience Filtering
+    const filterButtons = document.querySelectorAll('.experience-filter .filter-btn');
+    const experienceCards = document.querySelectorAll('.experience-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
             // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-            const filterValue = btn.getAttribute('data-filter');
+            const filterValue = button.getAttribute('data-filter');
 
-            timelineItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-
-                if (filterValue === 'all' || filterValue === category) {
-                    item.classList.remove('hidden');
+            experienceCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
                 } else {
-                    item.classList.add('hidden');
+                    card.style.display = 'none';
                 }
             });
         });
     });
 
-    // 4. Copy Email to Clipboard
+    // 4. One-Click Copy Email
     const copyEmailBtn = document.getElementById('copyEmailBtn');
     if (copyEmailBtn) {
         copyEmailBtn.addEventListener('click', () => {
             const email = 'krostan68@yahoo.com';
             navigator.clipboard.writeText(email).then(() => {
-                const icon = copyEmailBtn.querySelector('i');
-                icon.className = 'fa-solid fa-check';
-                copyEmailBtn.style.color = '#10B981';
+                const originalHtml = copyEmailBtn.innerHTML;
+                copyEmailBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #168C8C;"></i>';
+                copyEmailBtn.title = 'Email copied!';
                 setTimeout(() => {
-                    icon.className = 'fa-regular fa-copy';
-                    copyEmailBtn.style.color = '';
-                }, 2000);
+                    copyEmailBtn.innerHTML = originalHtml;
+                    copyEmailBtn.title = 'Copy Email';
+                }, 2500);
             }).catch(err => {
                 console.error('Failed to copy: ', err);
             });
         });
     }
 
-    // 5. Contact Form Handling
+    // 5. Contact Form Submission Handling
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            // Show success message
-            formSuccess.classList.remove('hidden');
-            contactForm.reset();
+            if (formSuccess) {
+                formSuccess.classList.remove('hidden');
+            }
 
-            // Open mailto pre-filled
             const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-            const bodyText = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            window.location.href = `mailto:krostan68@yahoo.com?subject=${subject}&body=${bodyText}`;
-
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
             setTimeout(() => {
-                formSuccess.classList.add('hidden');
-            }, 6000);
+                window.location.href = `mailto:krostan68@yahoo.com?subject=${subject}&body=${body}`;
+            }, 600);
         });
     }
 });
