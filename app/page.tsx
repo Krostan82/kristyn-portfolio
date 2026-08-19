@@ -22,7 +22,6 @@ import {
   Brain,
   FileText,
   Workflow,
-  Sparkles,
   AlertTriangle,
   Wrench,
   CheckCircle
@@ -30,7 +29,7 @@ import {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeFilter, setActiveFilter] = useState<"all" | "pgl" | "seko" | "expeditors">("all");
+  const [activeFilter, setActiveFilter] = useState<"all" | "pgl" | "seko" | "expeditors" | "other">("all");
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -64,11 +63,11 @@ export default function Home() {
       period: "Aug 2024 – Apr 2026",
       location: "Franklin Park, IL",
       bullets: [
-        "Spearheaded commercial operations across sales, marketing, CRM systems, and customer-facing technology for a multi-modal global logistics provider.",
-        "Standardized commercial SOPs across business units, significantly accelerating knowledge transfer, onboarding velocity, and cross-departmental alignment.",
-        "Rebuilt the Microsoft Dynamics 365 environment, leading pipeline governance and matching 39,000+ prospect records to accounts.",
-        "Stepped into interim marketing leadership during an executive transition, managing digital tooling audits, content workflows, and vendor performance.",
-        "Facilitated high-stakes executive QBRs and designed custom sales support playbooks for enterprise client expansion."
+        "Led commercial strategy and operations across sales, marketing, CRM, and client-facing technology for a global freight forwarder spanning air, ocean, and ground transportation.",
+        "Developed and standardized SOPs across commercial functions, improving cross-functional consistency, knowledge transfer, and onboarding velocity.",
+        "Owned CRM strategy and operations on Microsoft Dynamics 365, including lead pipeline management, segmentation, and large-scale prospect-to-CRM matching across 39,000+ records.",
+        "Stepped into interim marketing strategy leadership during an organizational transition, managing vendor relationships, content operations, and digital tooling evaluation.",
+        "Partnered with executive leadership on quarterly business reviews (QBRs), high-stakes client engagements, and sales support across the broader commercial organization."
       ]
     },
     {
@@ -78,11 +77,12 @@ export default function Home() {
       period: "Jan 2023 – Jun 2024",
       location: "Global Scope",
       bullets: [
-        "Partnered directly with Global and Regional Chief Commercial Officers to establish accountability, KPI structures, and performance cadence worldwide.",
-        "Owned real-time sales reporting across pipeline health, win/loss ratios, marketing ROI, NPS, and customer retention utilizing Salesforce and Power BI.",
-        "Led the commercial integration of global acquisitions, ensuring acquired sales teams and portfolios were rapidly folded into SEKO operating standards.",
-        "Managed the Corporate International quoting team, establishing margin governance and pricing models in Magaya and WebCargo.",
-        "Owned global Return on Sales Expense (ROSE) optimization, auditing regional sales investments to maximize commercial productivity."
+        "Supported Global and Regional Chief Commercial Officers in driving structure, KPIs, and accountability across local, country-level, and regional sales teams worldwide.",
+        "Owned KPI tracking across pipeline, wins, sales performance, growth, marketing ROI, NPS, churn, and retention leveraging Salesforce and Power BI.",
+        "Led commercial integration of acquisitions, ensuring acquired businesses were absorbed into the global commercial organization for maximum synergy realization.",
+        "Drove revenue management and forecasting through real-time BI analysis, identifying revenue leakage, EBIT risks, and refining global growth forecasts.",
+        "Managed the Corporate International quote team, partnering with product leadership on margin guidance and win/loss analysis using Magaya and WebCargo.",
+        "Owned ROSE (Return on Sales Expense) globally, partnering with regional CCOs to maximize ROI productivity across the global sales organization."
       ]
     },
     {
@@ -90,15 +90,16 @@ export default function Home() {
       category: "seko",
       role: "Commercial Field Sales Director",
       period: "Nov 2016 – Dec 2022",
-      location: "Chicago / National",
+      location: "",
       bullets: [
-        "Built and led the Client Specialist Executives (Inside Sales) team, generating qualified pipeline and quoting support for branches.",
-        "Launched SEKO’s national BDR program from the ground up—authoring cadences, call scripts, CRM adoption metrics, and conversion tracking.",
-        "Elevated CRM adoption from low engagement to 60%+ by partnering with software vendors to streamline interface usability and reporting.",
-        "Designed and delivered new hire onboarding (Freight Forwarding 101, pre-call planning, and account profiling).",
-        "Created the Transition & Implementation program for onboarding strategic accounts and enterprise partners.",
-        "Directly managed two Strategic Accounts, driving 20% revenue and gross profit growth through collaborative process mapping workshops.",
-        "Recipient of the SEKO Logistics Service Excellence Award (2018)."
+        "Built and managed the Client Specialist Executives (Inside Sales) team, driving lead generation and ad-hoc quoting for domestic and international branch clients.",
+        "Launched and managed SEKO's BDR program from scratch — including scripts, email templates, KPI framework, CRM adoption, and conversion tracking.",
+        "Designed sales performance dashboards and reporting, increasing sales performance visibility by 100% across executives, strategic partners, and equity partners.",
+        "Drove CRM adoption from low engagement to 60%+ usage by partnering with the vendor on tool redesign, navigation, and reporting improvements.",
+        "Built and delivered SEKO's sales training program for new hires (Freight Forwarding 101, account profiling, pre-call planning, and software training).",
+        "Created the Transition & Implementation program for onboarding new accounts and Strategic Partners into the SEKO network.",
+        "Account-managed two Strategic Accounts, driving 20% revenue and gross profit growth through process mapping workshops.",
+        "Honored with the SEKO Logistics Service Excellence Award (2018)."
       ]
     },
     {
@@ -106,10 +107,10 @@ export default function Home() {
       category: "expeditors",
       role: "Customer Solutions Manager, Midwest Region",
       period: "Jan 2015 – Oct 2016",
-      location: "Midwest Region",
+      location: "",
       bullets: [
-        "Conducted in-depth customer supply chain process mapping to position integrated technology solutions, driving tangible client productivity.",
-        "Partnered with sales directors on high-value new logo acquisition and coached account managers on value-based consultative selling."
+        "Mapped client processes and positioned technology solutions to drive measurable efficiency and productivity gains across the Midwest region.",
+        "Supported new logo acquisition and existing account growth while coaching sales and account managers on tech selling."
       ]
     },
     {
@@ -117,11 +118,11 @@ export default function Home() {
       category: "expeditors",
       role: "Global Business Process Improvement Manager",
       period: "Jan 2012 – Dec 2014",
-      location: "Global Headquarters Scope",
+      location: "",
       bullets: [
-        "Architected end-to-end EDI billing workflows from customer request through IT deployment, reducing average cycle times by 50%.",
-        "Served as core leader on the Global Billing Initiative targeting 100% invoicing quality, elevating global accuracy to 88.8%.",
-        "Authored curriculum and delivered global training on Effective Problem Solving (root cause analysis) and Lean Process Mapping."
+        "Designed an EDI billing process from request through deployment, reducing average project timeline by 50%.",
+        "Core team member on a Global Billing Initiative targeting 100% invoicing quality; reached 88.8% globally by March 2015.",
+        "Co-developed EDI training curriculum and delivered global training on Effective Problem Solving (root cause) and Process Mapping."
       ]
     },
     {
@@ -129,23 +130,34 @@ export default function Home() {
       category: "expeditors",
       role: "Midwest Regional Process Improvement Manager",
       period: "Jan 2006 – Dec 2011",
-      location: "Midwest Region",
+      location: "",
       bullets: [
-        "Standardized desktop-level operational procedures across Midwestern branch locations to ensure consistent, compliant service execution.",
-        "Facilitated cross-functional workshops to eliminate waste, resolve chronic operational errors, and boost branch productivity."
+        "Documented processes across business units to drive consistent execution at desk level.",
+        "Facilitated workshops across product and service teams for root cause analysis and productivity improvements.",
+        "Trained branch and regional employees on Lean and Six Sigma methodologies."
       ]
     },
     {
       company: "Expeditors International",
       category: "expeditors",
-      role: "Early Leadership & Account Management Roles",
+      role: "Account Management & Operational Roles",
       period: "Jan 1993 – Dec 2005",
-      location: "Multiple Roles",
+      location: "",
       bullets: [
-        "Global Account Manager (2004–2005): Grew global account billing from $150K/mo to $500K/mo through value-added supply chain expansion.",
-        "Regional Cargo Insurance Manager (2002–2003): Managed regional claims resolution, risk underwriting, and Incoterms compliance training.",
-        "Export Initiative Lead (1999–2001): Developed commercial strategies to expand underdeveloped air and ocean trade lanes.",
-        "Accounts Receivable Lead (1993–1995): Supervised cash collections, customer credit risk, and early billing automation."
+        "Global Account Manager (2004–2005): Grew global account revenue from $150K/month to $500K/month through value-added service expansion.",
+        "Regional Cargo Insurance Manager (2002–2003): Led regional sales targets, claims management, underwriting, and Incoterms training.",
+        "Export Initiative Program Lead (1999–2001): Designed strategy to expand underdeveloped air and ocean export lanes from the US.",
+        "Accounts Receivable Lead (1993–1995): Managed customer collections, deposit security, and early accounting process improvements."
+      ]
+    },
+    {
+      company: "Hamilton Partners",
+      category: "other",
+      role: "General Manager",
+      period: "Jan 1996 – Dec 1998",
+      location: "",
+      bullets: [
+        "Owned full P&L responsibility for the fitness center, including staff, clients, sales performance, programming, and profitability."
       ]
     }
   ];
@@ -299,20 +311,20 @@ export default function Home() {
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Executive Summary</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Bridging Strategic Vision &amp; Hands-On Operational Rigor</h2>
+              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Bridging High-Level Commercial Strategy &amp; Hands-On Execution</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 mb-12">
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-[#172033] mb-4">The Transformation Approach</h3>
+                <h3 className="text-xl font-bold text-[#172033] mb-4">The Transformation Philosophy</h3>
                 <p className="text-[#3D485C] leading-relaxed mb-4">
-                  Throughout my career across global logistics and commercial organizations, I have specialized in turning chaotic, disconnected environments into structured, high-performing engines.
+                  I specialize in fixing commercial environments with missing logic: CRMs without structure, sales teams lacking enablement tools, marketing functions in transition, and post-acquisition organizations operating as disconnected silos.
                 </p>
                 <p className="text-[#3D485C] leading-relaxed mb-4">
-                  Whether addressing fragmented CRM data models, missing sales enablement tools, or disconnected post-acquisition business units, my focus is always on solving the root operational challenge and establishing clear, repeatable processes.
+                  My approach diagnoses what is actually wrong, designs system-wide fixes, and executes cross-functionally to make changes permanent.
                 </p>
                 <p className="text-[#3D485C] leading-relaxed">
-                  I don't deliver theoretical slide decks. I build working systems, coach teams through adoption, and hand over sustainable governance.
+                  I build working systems, enable teams through structured training, and transfer ownership for sustainable operational performance.
                 </p>
               </div>
 
@@ -320,16 +332,16 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-[#172033] mb-4">Proven Industry Track Record</h3>
                 <div className="space-y-4">
                   <div className="pb-3 border-b border-[#E2E4E9]">
-                    <span className="font-bold text-sm text-[#172033] block">PGL (Perimeter Global Logistics)</span>
-                    <span className="text-xs text-[#475467] leading-relaxed">Director of Commercial Strategy &amp; Ops. Restructured Dynamics 365, matched 39K+ prospect records, and built commercial SOP frameworks.</span>
+                    <span className="font-bold text-sm text-[#172033] block">Director of Commercial Strategy &amp; Ops at PGL:</span>
+                    <span className="text-xs text-[#475467] leading-relaxed">Rebuilt Dynamics 365 environment, stood up sales enablement &amp; client success, managed interim marketing.</span>
                   </div>
                   <div className="pb-3 border-b border-[#E2E4E9]">
-                    <span className="font-bold text-sm text-[#172033] block">SEKO Logistics</span>
-                    <span className="text-xs text-[#475467] leading-relaxed">Global Commercial Ops Director. Scaled BDR programs, led M&amp;A commercial integration, and elevated CRM adoption to 60%+.</span>
+                    <span className="font-bold text-sm text-[#172033] block">Global Commercial Ops Director at SEKO Logistics:</span>
+                    <span className="text-xs text-[#475467] leading-relaxed">Scaled BDR programs, led M&amp;A commercial integration, and owned global sales expense ROI.</span>
                   </div>
                   <div>
-                    <span className="font-bold text-sm text-[#172033] block">Expeditors International</span>
-                    <span className="text-xs text-[#475467] leading-relaxed">17+ Year Progression to Global Process Improvement Manager. Reduced EDI billing timelines by 50% and expanded key accounts to $500K/mo.</span>
+                    <span className="font-bold text-sm text-[#172033] block">17+ Years at Expeditors:</span>
+                    <span className="text-xs text-[#475467] leading-relaxed">Rose from Accounts Receivable to Global Process Improvement Manager, driving multi-million dollar account expansions and EDI billing timelines down by 50%.</span>
                   </div>
                 </div>
               </div>
@@ -339,7 +351,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 bg-white rounded-2xl border border-[#E7E9ED] shadow-sm divide-y md:divide-y-0 md:divide-x divide-[#E2E4E9]">
               <div className="p-6 text-center">
                 <div className="text-3xl font-bold text-[#168C8C] mb-1">20+</div>
-                <div className="text-xs font-semibold text-[#475467]">Years Leadership &amp; Transformation</div>
+                <div className="text-xs font-semibold text-[#475467]">Years Leadership</div>
               </div>
               <div className="p-6 text-center">
                 <div className="text-3xl font-bold text-[#168C8C] mb-1">39K+</div>
@@ -347,11 +359,11 @@ export default function Home() {
               </div>
               <div className="p-6 text-center">
                 <div className="text-3xl font-bold text-[#168C8C] mb-1">60%+</div>
-                <div className="text-xs font-semibold text-[#475467]">CRM Adoption &amp; Usage Uplift</div>
+                <div className="text-xs font-semibold text-[#475467]">CRM Engagement Uplift</div>
               </div>
               <div className="p-6 text-center">
                 <div className="text-3xl font-bold text-[#168C8C] mb-1">50%</div>
-                <div className="text-xs font-semibold text-[#475467]">Cycle Time Reduction in Global Billing</div>
+                <div className="text-xs font-semibold text-[#475467]">Cycle Time Reduction in EDI Billing</div>
               </div>
             </div>
           </div>
@@ -377,9 +389,9 @@ export default function Home() {
                   </p>
                 </div>
                 <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Desk-level process mapping &amp; root-cause problem solving</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> CRM data model audit &amp; pipeline hygiene assessment</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Identifying hidden margin leakage &amp; quoting cycle inefficiencies</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Desk-level process mapping &amp; root cause problem solving</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> CRM data model audit &amp; pipeline maturity assessment</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Identifying margin leakage &amp; quote turnaround bottlenecks</li>
                 </ul>
               </div>
 
@@ -389,13 +401,13 @@ export default function Home() {
                   <span className="text-[#168C8C] font-bold text-lg mb-3 block">02</span>
                   <h3 className="text-xl font-bold text-[#172033] mb-3">Design Practical Systems &amp; Processes</h3>
                   <p className="text-[#475467] text-sm leading-relaxed mb-6">
-                    Architecting intuitive, scalable operating procedures and technical workflows that eliminate complexity and fit seamlessly into daily work.
+                    Architecting intuitive, scalable standard operating procedures and technical workflows that eliminate complexity and fit seamlessly into daily work.
                   </p>
                 </div>
                 <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Standard Operating Procedure (SOP) design &amp; playbooks</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Pricing, quoting, and client implementation frameworks</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Clean data governance &amp; executive KPI dashboard modeling</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Standard Operating Procedure (SOP) design &amp; whiteboard mapping</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Margin guidance, quote desk workflows &amp; onboarding playbooks</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Power BI reporting, KPI tracking (NPS, churn, EBIT risk)</li>
                 </ul>
               </div>
 
@@ -409,9 +421,9 @@ export default function Home() {
                   </p>
                 </div>
                 <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> 5x Janek-certified sales training &amp; onboarding curricula</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Inside sales, BDR, and field commercial coaching</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Hands-on CRM configuration, workflow testing, and rollout</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> 5x Janek-certified sales training &amp; Freight Forwarding 101 curricula</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Inside sales &amp; BDR program execution with scripts &amp; cadences</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Dynamics 365 &amp; Salesforce administration and tool rollout</li>
                 </ul>
               </div>
 
@@ -425,9 +437,9 @@ export default function Home() {
                   </p>
                 </div>
                 <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Training internal system owners &amp; process champions</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Clear governance rules and SLA documentation</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Continuous feedback loops for ongoing performance gains</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Training internal system owners &amp; regional process champions</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Clear governance standards and transition playbooks</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Continuous improvement loops using Lean &amp; Six Sigma principles</li>
                 </ul>
               </div>
             </div>
@@ -447,12 +459,12 @@ export default function Home() {
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-8">
                 {[
                   { step: "01", name: "Observe", desc: "Desk-level observation of daily realities" },
-                  { step: "02", name: "Diagnose", desc: "Uncover core root causes and data flaws" },
-                  { step: "03", name: "Prioritize", desc: "Target high-ROI, low-friction fixes" },
-                  { step: "04", name: "Build", desc: "Design practical tools, SOPs, and logic" },
-                  { step: "05", name: "Test", desc: "Pilot with front-line teams & iterate" },
+                  { step: "02", name: "Diagnose", desc: "Identify root cause issues and process friction" },
+                  { step: "03", name: "Prioritize", desc: "Focus on high-impact commercial & operational fixes" },
+                  { step: "04", name: "Build", desc: "Design practical SOPs, tools, and system workflows" },
+                  { step: "05", name: "Test", desc: "Validate workflows with desk-level teams" },
                   { step: "06", name: "Enable", desc: "Deliver structured training & coaching" },
-                  { step: "07", name: "Transfer", desc: "Hand over governance to internal leads" }
+                  { step: "07", name: "Transfer", desc: "Hand over ownership to empowered internal leaders" }
                 ].map((item) => (
                   <div key={item.step} className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-xl p-4 text-center hover:bg-[#E9F4F4] hover:border-[#168C8C] transition-all">
                     <span className="text-[0.7rem] font-bold uppercase text-[#168C8C] block mb-1">Step {item.step}</span>
@@ -463,7 +475,7 @@ export default function Home() {
               </div>
 
               <div className="bg-[#E9F4F4] border-l-4 border-[#168C8C] p-4 rounded-r-lg text-xs md:text-sm text-[#172033] leading-relaxed">
-                <strong className="text-[#0E6666]">Principle of Sustainable Enablement:</strong> I believe in creating resilient operating systems that teams can independently run, scale, and optimize—deliberately avoiding permanent administrator dependencies or becoming an ongoing help desk.
+                <strong className="text-[#0E6666]">Sustainable Transformation:</strong> I build and improve systems so teams can independently operate and scale them, deliberately avoiding becoming the permanent administrator or help desk for what I create.
               </div>
             </div>
           </div>
@@ -483,11 +495,11 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
                   <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Revenue Optimization &amp; Governance</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Centralized International Pricing &amp; Quoting Capability</h3>
+                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Revenue Management &amp; Quoting</span>
+                    <h3 className="text-lg font-bold text-[#172033]">Centralized Corporate International Quote Team &amp; Margin Guidance</h3>
                   </div>
                   <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
-                    SEKO Logistics &amp; PGL
+                    SEKO Logistics
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
@@ -495,21 +507,21 @@ export default function Home() {
                     <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <AlertTriangle className="w-3.5 h-3.5" /> Problem
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Ad-hoc quoting across decentralized branches caused significant margin erosion, slow turnaround times for bids, and zero visibility into global win/loss trends.</p>
+                    <p className="text-[#475467] leading-relaxed">Decentralized international quoting lacked standardized margin control, leading to inconsistent pricing, margin leakage, and limited visibility into win/loss performance.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <Wrench className="w-3.5 h-3.5" /> What I Did
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Architected a centralized quote desk workflow in Magaya and WebCargo with standardized margin guidance thresholds, response SLAs, and automated tracking.</p>
+                    <p className="text-[#475467] leading-relaxed">Managed the Corporate International quote team, partnering with product leadership on margin guidance and win/loss analysis using Magaya and WebCargo.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5" /> Outcome
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Eliminated margin leakage, reduced quote turnaround cycle time, and delivered actionable win/loss analytics directly to executive leadership.</p>
+                    <p className="text-[#475467] leading-relaxed">Established structured quoting governance, protected gross margins, and provided real-time pricing intelligence to commercial leadership.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
-                      Consistent Gross Margin Floor &bull; 100% Quote Visibility
+                      Standardized Margin Guidance &bull; Win/Loss Intelligence
                     </div>
                   </div>
                 </div>
@@ -519,11 +531,11 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
                   <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">CRM Architecture &amp; Data Hygiene</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Commercial Data Restructuring &amp; 39K+ Prospect Match Engine</h3>
+                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">CRM Strategy &amp; Administration</span>
+                    <h3 className="text-lg font-bold text-[#172033]">Microsoft Dynamics 365 Architecture &amp; 39,000+ Record Matching</h3>
                   </div>
                   <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
-                    Perimeter Global Logistics (PGL)
+                    PGL (Perimeter Global Logistics)
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
@@ -531,21 +543,21 @@ export default function Home() {
                     <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <AlertTriangle className="w-3.5 h-3.5" /> Problem
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Over 39,000 unorganized prospect records in Microsoft Dynamics 365 led to severe duplicate accounts, lack of pipeline stage clarity, and low sales rep trust.</p>
+                    <p className="text-[#475467] leading-relaxed">Over 39,000 unorganized prospect records in Microsoft Dynamics 365 caused data duplication, unclear lead routing, and low commercial visibility across sales pipelines.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <Wrench className="w-3.5 h-3.5" /> What I Did
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Designed a multi-stage deduplication and account-matching hierarchy. Rebuilt opportunity stages, pipeline governance rules, and executive views.</p>
+                    <p className="text-[#475467] leading-relaxed">Owned CRM strategy and operations on Microsoft Dynamics 365, including lead pipeline management, segmentation, and large-scale prospect-to-CRM matching across 39,000+ records.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5" /> Outcome
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Delivered a clean, trustworthy single source of truth for commercial leadership and increased active daily sales team CRM engagement.</p>
+                    <p className="text-[#475467] leading-relaxed">Restructured the CRM environment into a reliable foundation for sales targeting, lead segmentation, and commercial executive reporting.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
-                      39,000+ Cleaned Records &bull; 60%+ Adoption Surge
+                      39,000+ Records Cleaned &bull; Restructured Pipeline
                     </div>
                   </div>
                 </div>
@@ -555,8 +567,8 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
                   <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Client Success &amp; M&amp;A Integration</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Client Implementation &amp; Strategic Partner Onboarding Framework</h3>
+                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">M&amp;A Integration &amp; Client Success</span>
+                    <h3 className="text-lg font-bold text-[#172033]">Transition &amp; Implementation Program for Strategic Accounts</h3>
                   </div>
                   <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
                     SEKO Logistics
@@ -567,21 +579,21 @@ export default function Home() {
                     <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <AlertTriangle className="w-3.5 h-3.5" /> Problem
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Newly acquired entities and major enterprise client wins suffered from disjointed handoffs between sales, operations, and IT, creating early friction.</p>
+                    <p className="text-[#475467] leading-relaxed">Acquired logistics companies and major enterprise client wins needed a formalized framework to prevent churn and integrate smoothly into network operations.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <Wrench className="w-3.5 h-3.5" /> What I Did
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Created a structured Transition &amp; Implementation methodology with standardized milestone gates, QBR review templates, and cross-functional sign-offs.</p>
+                    <p className="text-[#475467] leading-relaxed">Led commercial integration of acquisitions to maximize synergy realization, and created the Transition &amp; Implementation program for onboarding new accounts and Strategic Partners into the SEKO network.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5" /> Outcome
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Accelerated time-to-first-shipment, prevented early client churn, and enabled seamless commercial assimilation of acquired freight forwarding businesses.</p>
+                    <p className="text-[#475467] leading-relaxed">Ensured acquired entities were rapidly absorbed into the commercial organization and accelerated successful account go-lives across the network.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
-                      Smooth M&amp;A Assimilation &bull; Accelerated First-Dollar Velocity
+                      Commercial M&amp;A Integration &bull; Standardized Onboarding
                     </div>
                   </div>
                 </div>
@@ -591,8 +603,8 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
                   <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Sales &amp; Operational Enablement</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Commercial Enablement Academy &amp; BDR Program Launch</h3>
+                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Sales Enablement &amp; Team Building</span>
+                    <h3 className="text-lg font-bold text-[#172033]">BDR Program Launch &amp; 60%+ CRM Adoption Transformation</h3>
                   </div>
                   <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
                     SEKO Logistics
@@ -603,21 +615,21 @@ export default function Home() {
                     <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <AlertTriangle className="w-3.5 h-3.5" /> Problem
                     </span>
-                    <p className="text-[#475467] leading-relaxed">New commercial hires faced steep ramp times due to the absence of formalized logistics sales training, structured prospecting playbooks, and standardized talk tracks.</p>
+                    <p className="text-[#475467] leading-relaxed">Lack of structured inside sales lead generation and historically low CRM utilization across regional and branch sales teams.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <Wrench className="w-3.5 h-3.5" /> What I Did
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Built and delivered comprehensive Freight Forwarding 101 curricula, pre-call planning frameworks, and outbound BDR playbooks backed by 5x Janek sales certifications.</p>
+                    <p className="text-[#475467] leading-relaxed">Launched and managed SEKO's BDR program from scratch (scripts, cadences, KPIs); partnered with vendor on tool redesign to drive adoption; delivered new-hire sales training (Freight Forwarding 101).</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5" /> Outcome
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Cut sales rep ramp time in half, doubled outbound meeting creation, and earned the 2018 SEKO Logistics Service Excellence Award.</p>
+                    <p className="text-[#475467] leading-relaxed">Increased sales performance visibility by 100%, grew CRM adoption from low engagement to 60%+ usage, and earned the 2018 SEKO Logistics Service Excellence Award.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
-                      100% Increase in Pipeline Visibility &bull; Excellence Award Winner
+                      60%+ CRM Adoption &bull; Service Excellence Award Winner (2018)
                     </div>
                   </div>
                 </div>
@@ -627,8 +639,8 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
                   <div>
-                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Global Process Improvement</span>
-                    <h3 className="text-lg font-bold text-[#172033]">Global EDI Billing &amp; Invoicing Cycle Time Reduction</h3>
+                    <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Global Business Process Improvement</span>
+                    <h3 className="text-lg font-bold text-[#172033]">Global EDI Billing Process Design &amp; 50% Cycle Time Reduction</h3>
                   </div>
                   <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full self-start sm:self-auto">
                     Expeditors International
@@ -639,21 +651,21 @@ export default function Home() {
                     <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <AlertTriangle className="w-3.5 h-3.5" /> Problem
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Custom EDI billing integrations were plagued by protracted setup times, high error rates, and delayed cash collection cycles across regional branches worldwide.</p>
+                    <p className="text-[#475467] leading-relaxed">Complex electronic billing requests took extended deployment timelines and required improved global invoicing accuracy.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <Wrench className="w-3.5 h-3.5" /> What I Did
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Mapped end-to-end billing requirements, established Lean root-cause error checkpoints, and designed an optimized EDI request-to-deployment workflow.</p>
+                    <p className="text-[#475467] leading-relaxed">Designed an EDI billing process from request through deployment, served on the Global Billing Initiative core team, and delivered global training on Effective Problem Solving and Process Mapping.</p>
                   </div>
                   <div>
                     <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5" /> Outcome
                     </span>
-                    <p className="text-[#475467] leading-relaxed">Reduced average project implementation timelines by 50% and helped achieve 88.8% global electronic invoicing quality.</p>
+                    <p className="text-[#475467] leading-relaxed">Reduced average project timeline by 50% and supported the initiative reaching 88.8% invoicing quality globally by March 2015.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
-                      50% Timeline Reduction &bull; 88.8% Global Invoicing Quality
+                      50% Timeline Reduction &bull; 88.8% Invoicing Quality Reached
                     </div>
                   </div>
                 </div>
@@ -668,7 +680,7 @@ export default function Home() {
             <div className="mb-12 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Career History</span>
               <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Leadership Experience</h2>
-              <p className="text-[#475467]">A sustained executive trajectory delivering process transformation, revenue governance, and cross-functional leadership.</p>
+              <p className="text-[#475467]">A history of process transformation, commercial growth, and team building across global 3PLs and freight forwarders.</p>
             </div>
 
             {/* Filter Buttons */}
@@ -677,7 +689,8 @@ export default function Home() {
                 { id: "all", label: "All Roles" },
                 { id: "pgl", label: "PGL" },
                 { id: "seko", label: "SEKO Logistics" },
-                { id: "expeditors", label: "Expeditors" }
+                { id: "expeditors", label: "Expeditors" },
+                { id: "other", label: "Hamilton Partners" }
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -706,9 +719,11 @@ export default function Home() {
                       <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full">
                         {exp.period}
                       </span>
-                      <span className="text-xs text-[#64748B] flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5" /> {exp.location}
-                      </span>
+                      {exp.location && (
+                        <span className="text-xs text-[#64748B] flex items-center gap-1">
+                          <MapPin className="w-3.5 h-3.5" /> {exp.location}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <ul className="space-y-2.5 text-xs md:text-sm text-[#3D485C]">
@@ -736,7 +751,7 @@ export default function Home() {
 
             <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm mb-6">
               <p className="text-[#172033] text-sm md:text-base leading-relaxed">
-                I am not an AI engineer or software developer. Rather, I apply practical AI, workflow automations, and intelligent agentic tools directly to real-world commercial problems—enhancing CRM intelligence, accelerating SOP generation, and eliminating manual operational bottlenecks while keeping human judgment and strategy at the core.
+                I am actively building skills in AI, automation, agents, and digital transformation—applying practical AI, workflow automations, and intelligent tools directly to real-world commercial operations to enhance CRM data accuracy, accelerate SOP generation, and eliminate manual bottlenecks while keeping operational strategy and human judgment at the core.
               </p>
             </div>
 
@@ -757,7 +772,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-bold text-base text-[#172033] mb-2">Intelligent SOP &amp; Playbook Extraction</h3>
                 <p className="text-xs md:text-sm text-[#475467] leading-relaxed">
-                  Leveraging AI language models to rapidly structure raw process recordings, interview notes, and workflows into crisp, standardized operational documentation.
+                  Leveraging AI tools to rapidly structure raw process recordings, interview notes, and workflows into crisp, standardized operational documentation.
                 </p>
               </div>
 
@@ -778,9 +793,8 @@ export default function Home() {
         <section id="tech-stack" className="py-20 bg-[#F0EFEB] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
-              <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Systems &amp; Tools</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Technology &amp; Operating Software</h2>
-              <p className="text-[#475467]">Hands-on administrative and operational fluency across industry-standard commercial and logistics platforms.</p>
+              <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Tech Stack &amp; Software</span>
+              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Technology Stack &amp; Logistics Tools</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -791,8 +805,8 @@ export default function Home() {
                 <ul className="space-y-2 text-xs text-[#475467]">
                   <li className="flex items-center justify-between">Microsoft Dynamics 365 <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1.5 py-0.5 rounded text-[0.65rem] text-[#64748B]">Admin</span></li>
                   <li className="flex items-center justify-between">Salesforce CRM <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1.5 py-0.5 rounded text-[0.65rem] text-[#64748B]">Admin</span></li>
-                  <li>Pipeline Stage Architecture</li>
-                  <li>Account Deduplication</li>
+                  <li>Architecture &amp; Data Modeling</li>
+                  <li>39,000+ Record Cleanup</li>
                 </ul>
               </div>
 
@@ -801,10 +815,10 @@ export default function Home() {
                   <TrendingUp className="w-4 h-4 text-[#168C8C]" /> BI &amp; Analytics
                 </h3>
                 <ul className="space-y-2 text-xs text-[#475467]">
-                  <li>Microsoft Power BI</li>
-                  <li>Sales ROI (ROSE) Models</li>
-                  <li>EBIT &amp; Margin Risk Analysis</li>
-                  <li>Executive QBR Dashboards</li>
+                  <li className="flex items-center justify-between">Microsoft Power BI <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1.5 py-0.5 rounded text-[0.65rem] text-[#64748B]">Advanced</span></li>
+                  <li>Real-Time Revenue Management</li>
+                  <li>EBIT Risk &amp; ROSE Models</li>
+                  <li>Executive C-Suite Reporting</li>
                 </ul>
               </div>
 
@@ -813,10 +827,10 @@ export default function Home() {
                   <Layers className="w-4 h-4 text-[#168C8C]" /> Logistics &amp; Quoting
                 </h3>
                 <ul className="space-y-2 text-xs text-[#475467]">
+                  <li>CargoWise / Logixboard / NEO</li>
                   <li>Magaya &amp; WebCargo</li>
-                  <li>CargoWise / Logixboard</li>
-                  <li>NEO Supply Chain Portal</li>
-                  <li>International Quote Desks</li>
+                  <li>International Quote Management</li>
+                  <li>Digital Customer Portals</li>
                 </ul>
               </div>
 
@@ -825,10 +839,10 @@ export default function Home() {
                   <Workflow className="w-4 h-4 text-[#168C8C]" /> Process &amp; Integration
                 </h3>
                 <ul className="space-y-2 text-xs text-[#475467]">
-                  <li>EDI Billing Workflows</li>
-                  <li>Lean Value Stream Mapping</li>
-                  <li>Document Imaging Systems</li>
-                  <li>Process SOP Architectures</li>
+                  <li>EDI &amp; System Integration</li>
+                  <li>Billing Workflow Design</li>
+                  <li>Document Imaging Integration</li>
+                  <li>Automated Data Transfer</li>
                 </ul>
               </div>
             </div>
@@ -839,8 +853,8 @@ export default function Home() {
         <section id="credentials" className="py-20">
           <div className="max-w-[1180px] mx-auto px-6">
             <div className="mb-12 max-w-[780px]">
-              <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Professional Credentials</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Certifications &amp; Education</h2>
+              <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Certifications &amp; Learning</span>
+              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Education &amp; Professional Certifications</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6">
@@ -851,13 +865,10 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-[#172033]">Janek Performance Group</h3>
-                    <span className="text-xs text-[#64748B]">5x Certified Sales Methodology Practitioner &amp; Coach</span>
+                    <span className="text-xs text-[#64748B]">Certified Across 5 Core Sales Methodologies</span>
                   </div>
                 </div>
-                <p className="text-xs md:text-sm text-[#475467] leading-relaxed mb-4">
-                  Certified across core commercial frameworks to coach, implement, and institutionalize high-performance selling practices:
-                </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-4">
                   {[
                     "Critical Selling (Train-the-Trainer)",
                     "Critical Negotiation",
@@ -875,15 +886,15 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
                   <h4 className="font-bold text-sm text-[#172033] mb-1">Colorado State University</h4>
-                  <p className="text-xs text-[#475467] leading-relaxed">Higher education academic foundation in business management, leadership, and operational analysis.</p>
+                  <p className="text-xs text-[#475467] leading-relaxed">Higher education academic foundation supporting business process improvement, leadership, and operational management.</p>
                 </div>
                 <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
-                  <h4 className="font-bold text-sm text-[#172033] mb-1">Lean Enterprise &amp; Six Sigma</h4>
-                  <p className="text-xs text-[#475467] leading-relaxed">Trained in root-cause problem solving, whiteboard mapping, and waste elimination frameworks.</p>
+                  <h4 className="font-bold text-sm text-[#172033] mb-1">Lean &amp; Six Sigma</h4>
+                  <p className="text-xs text-[#475467] leading-relaxed">Lean Enterprise–trained in root cause analysis, value stream mapping, and continuous improvement fundamentals.</p>
                 </div>
                 <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
                   <h4 className="font-bold text-sm text-[#172033] mb-1">Service Excellence Award</h4>
-                  <p className="text-xs text-[#475467] leading-relaxed">Honored by SEKO Logistics (2018) for exceptional leadership, enablement delivery, and commercial support.</p>
+                  <p className="text-xs text-[#475467] leading-relaxed">SEKO Logistics (2018) – Recognized for outstanding leadership, field sales support, and organizational contribution.</p>
                 </div>
               </div>
             </div>
@@ -899,7 +910,7 @@ export default function Home() {
                   <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Let's Connect</span>
                   <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-3">Ready to Transform Your Commercial Operations?</h2>
                   <p className="text-sm text-[#475467] leading-relaxed mb-6">
-                    I am exploring senior commercial operations, process design, and transformation leadership roles across logistics, supply chain, and consulting practices.
+                    Exploring senior commercial operations and transformation roles in logistics, supply chain, and adjacent tech/consulting practices. Open to Chicago-based, remote, and selective relocation.
                   </p>
 
                   <div className="space-y-4 my-6">
@@ -908,7 +919,7 @@ export default function Home() {
                         <Mail className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-[0.7rem] font-bold uppercase tracking-wider text-[#64748B]">Email Direct</div>
+                        <div className="text-[0.7rem] font-bold uppercase tracking-wider text-[#64748B]">Direct Email</div>
                         <div className="flex items-center gap-2">
                           <a href="mailto:krostan68@yahoo.com" className="font-semibold text-sm text-[#172033] hover:text-[#168C8C]">
                             krostan68@yahoo.com
@@ -946,8 +957,8 @@ export default function Home() {
                         <MapPin className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-[0.7rem] font-bold uppercase tracking-wider text-[#64748B]">Location &amp; Work Preference</div>
-                        <span className="font-medium text-xs text-[#475467]">Greater Chicago Area &bull; Remote &bull; Selective Relocation</span>
+                        <div className="text-[0.7rem] font-bold uppercase tracking-wider text-[#64748B]">Location / Work Preference</div>
+                        <span className="font-medium text-xs text-[#475467]">Greater Chicago Area | Remote | Selective Relocation</span>
                       </div>
                     </div>
                   </div>
@@ -962,7 +973,7 @@ export default function Home() {
                       id="name"
                       name="name"
                       required
-                      placeholder="e.g. Sarah Jenkins"
+                      placeholder="Jane Doe"
                       className="w-full px-3.5 py-2.5 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-sm text-[#172033]"
                     />
                   </div>
@@ -973,7 +984,7 @@ export default function Home() {
                       id="email"
                       name="email"
                       required
-                      placeholder="e.g. sarah@company.com"
+                      placeholder="jane@company.com"
                       className="w-full px-3.5 py-2.5 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-sm text-[#172033]"
                     />
                   </div>
@@ -997,7 +1008,7 @@ export default function Home() {
                   {formSubmitted && (
                     <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-3 rounded-[6px] flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                      <span>Opening your default email client with your message draft...</span>
+                      <span>Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.</span>
                     </div>
                   )}
                 </form>
@@ -1012,9 +1023,10 @@ export default function Home() {
         <div className="max-w-[1180px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748B] gap-3">
           <div className="flex items-center gap-2.5 font-bold text-[#172033]">
             <div className="w-7 h-7 rounded-[4px] bg-[#168C8C] text-white flex items-center justify-center text-xs">KR</div>
-            <span>Kristyn Rostan &bull; Commercial Operations &amp; Transformation Leader</span>
+            <span>Kristyn Rostan</span>
           </div>
           <div>&copy; 2026 Kristyn Rostan. All rights reserved.</div>
+          <div><a href="#hero" className="text-[#168C8C] hover:underline">Back to Top &uarr;</a></div>
         </div>
       </footer>
     </div>
