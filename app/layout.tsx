@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${plusJakarta.variable} ${outfit.variable} font-sans min-h-screen bg-slate-950 text-slate-100 antialiased`}>
+      <body className={`${plusJakarta.variable} ${outfit.variable} font-sans min-h-screen bg-[#F7F6F2] text-[#172033] antialiased`}>
         {children}
       </body>
     </html>

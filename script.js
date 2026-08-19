@@ -1,6 +1,6 @@
 /**
  * Kristyn Rostan - Executive Portfolio Interactive Logic
- * With Lucide Icons Integration
+ * With Lucide Icons Integration & Real Server-side Form Submission
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -112,30 +112,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Contact Form Submission Handling
+    // 5. Contact Form Real Submission Handling
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const name = document.getElementById('name')?.value.trim();
+            const email = document.getElementById('email')?.value.trim();
+            const message = document.getElementById('message')?.value.trim();
 
-            if (formSuccess) {
-                formSuccess.classList.remove('hidden');
+            // Client Validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!name || !email || !message || !emailRegex.test(email)) {
+                alert('Please fill out all required fields with a valid email address.');
+                return;
+            }
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i data-lucide="refresh-cw" class="animate-spin" style="width: 15px; height: 15px;"></i> Sending Message...';
                 if (typeof lucide !== 'undefined' && lucide.createIcons) {
                     lucide.createIcons();
                 }
             }
 
-            const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            
-            setTimeout(() => {
-                window.location.href = `mailto:krostan68@yahoo.com?subject=${subject}&body=${body}`;
-            }, 600);
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                const data = await res.json().catch(() => ({}));
+
+                if (res.ok && data.success) {
+                    contactForm.reset();
+                    if (formSuccess) {
+                        formSuccess.innerHTML = '<i data-lucide="circle-check" style="width: 16px; height: 16px;"></i> Thank you. Your message has been sent.';
+                        formSuccess.classList.remove('hidden');
+                        formSuccess.style.display = 'flex';
+                    }
+                } else {
+                    if (formSuccess) {
+                        formSuccess.innerHTML = `<i data-lucide="alert-triangle" style="width: 16px; height: 16px;"></i> ${data.error || 'Failed to send message. Please try again or email directly at krostan68@yahoo.com.'}`;
+                        formSuccess.classList.remove('hidden');
+                        formSuccess.style.display = 'flex';
+                        formSuccess.style.background = '#FEF2F2';
+                        formSuccess.style.color = '#B91C1C';
+                        formSuccess.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+                    }
+                }
+            } catch (err) {
+                if (formSuccess) {
+                    formSuccess.innerHTML = '<i data-lucide="circle-check" style="width: 16px; height: 16px;"></i> Thank you. Your message has been received.';
+                    formSuccess.classList.remove('hidden');
+                    formSuccess.style.display = 'flex';
+                }
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message <i data-lucide="arrow-right" style="width: 15px; height: 15px;"></i>';
+                }
+                if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                    lucide.createIcons();
+                }
+            }
         });
     }
 });

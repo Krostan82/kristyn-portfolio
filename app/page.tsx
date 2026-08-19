@@ -43,7 +43,9 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState<"all" | "pgl" | "seko" | "expeditors" | "other">("all");
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formFeedback, setFormFeedback] = useState<string>("");
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("krostan68@yahoo.com");
@@ -51,20 +53,56 @@ export default function Home() {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
+    if (formStatus === "submitting") return;
 
-    setFormSubmitted(true);
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    
-    setTimeout(() => {
-      window.location.href = `mailto:krostan68@yahoo.com?subject=${subject}&body=${body}`;
-    }, 600);
+    // Client-side validation
+    if (!formData.name.trim()) {
+      setFormStatus("error");
+      setFormFeedback("Please enter your name.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
+      setFormStatus("error");
+      setFormFeedback("Please enter a valid email address.");
+      return;
+    }
+
+    if (!formData.message.trim()) {
+      setFormStatus("error");
+      setFormFeedback("Please enter your message.");
+      return;
+    }
+
+    setFormStatus("submitting");
+    setFormFeedback("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setFormStatus("success");
+        setFormFeedback(data.message || "Thank you. Your message has been sent.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setFormStatus("error");
+        setFormFeedback(data.error || "Failed to send your message. Please try again or email directly.");
+      }
+    } catch (err) {
+      setFormStatus("error");
+      setFormFeedback("An error occurred while sending your message. Please try again or email directly at krostan68@yahoo.com.");
+    }
   };
 
   const experienceData = [
@@ -1029,50 +1067,85 @@ export default function Home() {
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleFormSubmit} className="space-y-3.5">
+                <form onSubmit={handleFormSubmit} className="space-y-3.5" noValidate>
                   <div>
-                    <label htmlFor="name" className="block text-xs font-bold text-[#172033] mb-1">Your Name</label>
+                    <label htmlFor="name" className="block text-xs font-bold text-[#172033] mb-1">
+                      Your Name <span className="text-[#0E6666]">*</span>
+                    </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
                       placeholder="Jane Doe"
-                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033]"
+                      disabled={formStatus === "submitting"}
+                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold text-[#172033] mb-1">Your Email</label>
+                    <label htmlFor="email" className="block text-xs font-bold text-[#172033] mb-1">
+                      Your Email <span className="text-[#0E6666]">*</span>
+                    </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
                       placeholder="jane@company.com"
-                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033]"
+                      disabled={formStatus === "submitting"}
+                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-xs font-bold text-[#172033] mb-1">Message</label>
+                    <label htmlFor="message" className="block text-xs font-bold text-[#172033] mb-1">
+                      Message <span className="text-[#0E6666]">*</span>
+                    </label>
                     <textarea
                       id="message"
                       name="message"
                       rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
                       placeholder="Hi Kristyn, I would love to connect regarding an opportunity..."
-                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033]"
+                      disabled={formStatus === "submitting"}
+                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033] disabled:opacity-60"
                     ></textarea>
                   </div>
+
                   <button
                     type="submit"
-                    className="w-full bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-xs sm:text-sm py-3 rounded-[6px] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                    disabled={formStatus === "submitting"}
+                    className="w-full bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-xs sm:text-sm py-3 rounded-[6px] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 shadow-sm"
                   >
-                    Send Message <ArrowRight className="w-4 h-4" />
+                    {formStatus === "submitting" ? (
+                      <>
+                        <RefreshCw className="w-4 h-4 animate-spin" />
+                        <span>Sending Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
                   </button>
-                  {formSubmitted && (
-                    <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-2.5 rounded-[6px] flex items-center gap-2">
+
+                  {formStatus === "success" && (
+                    <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-3 rounded-[6px] flex items-center gap-2">
                       <CircleCheck className="w-4 h-4 flex-shrink-0" />
-                      <span>Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.</span>
+                      <span className="font-medium">{formFeedback || "Thank you. Your message has been sent."}</span>
+                    </div>
+                  )}
+
+                  {formStatus === "error" && (
+                    <div className="bg-[#FEF2F2] border border-[#EF4444]/30 text-[#B91C1C] text-xs p-3 rounded-[6px] flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+                      <span className="font-medium">{formFeedback}</span>
                     </div>
                   )}
                 </form>
