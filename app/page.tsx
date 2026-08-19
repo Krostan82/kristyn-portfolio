@@ -259,12 +259,8 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 h-[72px] bg-[#F7F6F2]/95 backdrop-blur-md border-b border-[#E2E4E9] z-50">
         <div className="max-w-[1180px] mx-auto px-6 h-full flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-3 no-underline">
-            <div className="w-[38px] h-[38px] rounded-[6px] overflow-hidden bg-[#FAF9F6] border border-[#E2E4E9] flex-shrink-0 relative">
-              <img
-                src="/headshot.jpg"
-                alt="Kristyn Rostan"
-                className="w-full h-full object-cover object-[center_15%]"
-              />
+            <div className="w-[38px] h-[38px] rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/30 flex items-center justify-center flex-shrink-0 font-bold text-[#168C8C] text-sm tracking-wide">
+              KR
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-[1rem] text-[#172033] leading-tight">Kristyn Rostan</span>
@@ -361,15 +357,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Headshot Card (Understated Executive Frame) */}
+              {/* Headshot / Executive Card */}
               <div className="flex justify-center lg:justify-end">
                 <div className="w-full max-w-[320px] bg-white rounded-xl border border-[#E7E9ED] p-3 shadow-sm hover:shadow-md transition-all">
-                  <div className="w-full aspect-[4/4.75] rounded-lg overflow-hidden bg-[#FAF9F6] border border-[#E2E4E9] relative">
-                    <img
-                      src="/headshot.jpg"
-                      alt="Kristyn Rostan"
-                      className="w-full h-full object-cover object-[center_15%]"
-                    />
+                  <div className="w-full aspect-[4/4.75] rounded-lg overflow-hidden bg-gradient-to-br from-[#F0EFEB] to-[#E5E9EE] border border-[#E2E4E9] relative flex flex-col items-center justify-center text-center p-6">
+                    <div className="w-20 h-20 rounded-full bg-[#168C8C]/10 border border-[#168C8C]/30 flex items-center justify-center mb-3">
+                      <span className="text-2xl font-bold tracking-wider text-[#168C8C]">KR</span>
+                    </div>
+                    <span className="font-bold text-[#172033] text-base">Kristyn Rostan</span>
+                    <span className="text-xs text-[#64748B] mt-1">Commercial Operations &amp; Transformation Leader</span>
                   </div>
                   <div className="mt-3 flex items-center justify-between px-1">
                     <div className="flex flex-col">
