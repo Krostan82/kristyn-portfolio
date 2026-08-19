@@ -180,39 +180,35 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#F7F6F2] text-[#172033] font-sans selection:bg-[#168C8C]/20">
-      {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 h-[76px] bg-[#F7F6F2]/95 backdrop-blur-md border-b border-[#E2E4E9] z-50">
+      {/* Navigation (72px Compact Executive Bar) */}
+      <header className="fixed top-0 left-0 right-0 h-[72px] bg-[#F7F6F2]/95 backdrop-blur-md border-b border-[#E2E4E9] z-50">
         <div className="max-w-[1180px] mx-auto px-6 h-full flex items-center justify-between">
-          <a href="#hero" className="flex items-center gap-3.5 no-underline">
-            <div className="w-[42px] h-[42px] rounded-[6px] overflow-hidden bg-[#168C8C] flex items-center justify-center border border-[#E2E4E9] flex-shrink-0">
+          <a href="#hero" className="flex items-center gap-3 no-underline">
+            <div className="w-[38px] h-[38px] rounded-[6px] overflow-hidden bg-[#FAF9F6] border border-[#E2E4E9] flex-shrink-0 relative">
               <img
                 src="/headshot.jpg"
                 alt="Kristyn Rostan"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
+                className="w-full h-full object-cover object-[center_15%]"
               />
-              <span className="text-white font-bold text-sm">KR</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-[1.05rem] text-[#172033] leading-tight">Kristyn Rostan</span>
-              <span className="text-[0.75rem] text-[#64748B] font-medium">Commercial Operations &amp; Transformation Leader</span>
+              <span className="font-bold text-[1rem] text-[#172033] leading-tight">Kristyn Rostan</span>
+              <span className="text-[0.725rem] text-[#64748B] font-medium">Commercial Operations &amp; Transformation Leader</span>
             </div>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-5">
-            <a href="#about" className="text-[0.9rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">About</a>
-            <a href="#focus" className="text-[0.9rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Core Focus</a>
-            <a href="#how-i-work" className="text-[0.9rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">How I Work</a>
-            <a href="#initiatives" className="text-[0.9rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Key Initiatives</a>
-            <a href="#experience" className="text-[0.9rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Experience</a>
-            <a href="#tech-stack" className="text-[0.9rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Tech Stack</a>
-            <a href="#credentials" className="text-[0.9rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Credentials</a>
+            <a href="#about" className="text-[0.875rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">About</a>
+            <a href="#focus" className="text-[0.875rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Core Focus</a>
+            <a href="#how-i-work" className="text-[0.875rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">How I Work</a>
+            <a href="#initiatives" className="text-[0.875rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Key Initiatives</a>
+            <a href="#experience" className="text-[0.875rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Experience</a>
+            <a href="#tech-stack" className="text-[0.875rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Tech Stack</a>
+            <a href="#credentials" className="text-[0.875rem] font-medium text-[#475467] hover:text-[#172033] transition-colors">Credentials</a>
             <a
               href="#contact"
-              className="bg-[#168C8C] hover:bg-[#0E6666] text-white text-[0.875rem] font-semibold px-4 py-2 rounded-[6px] transition-all hover:-translate-y-0.5"
+              className="bg-[#168C8C] hover:bg-[#0E6666] text-white text-[0.8125rem] font-semibold px-4 py-1.5 rounded-[6px] transition-all hover:-translate-y-0.5"
             >
               Connect
             </a>
@@ -230,51 +226,51 @@ export default function Home() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-[#E2E4E9] px-6 py-5 flex flex-col gap-3 shadow-lg">
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium">About</a>
-            <a href="#focus" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium">Core Focus</a>
-            <a href="#how-i-work" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium">How I Work</a>
-            <a href="#initiatives" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium">Key Initiatives</a>
-            <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium">Experience</a>
-            <a href="#tech-stack" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium">Tech Stack</a>
-            <a href="#credentials" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium">Credentials</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-[#168C8C] font-semibold">Connect &rarr;</a>
+          <div className="lg:hidden bg-white border-b border-[#E2E4E9] px-6 py-4 flex flex-col gap-2.5 shadow-md">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium text-sm">About</a>
+            <a href="#focus" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium text-sm">Core Focus</a>
+            <a href="#how-i-work" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium text-sm">How I Work</a>
+            <a href="#initiatives" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium text-sm">Key Initiatives</a>
+            <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium text-sm">Experience</a>
+            <a href="#tech-stack" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium text-sm">Tech Stack</a>
+            <a href="#credentials" onClick={() => setMobileMenuOpen(false)} className="text-[#475467] hover:text-[#172033] font-medium text-sm">Credentials</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-[#168C8C] font-semibold text-sm">Connect &rarr;</a>
           </div>
         )}
       </header>
 
-      <main className="pt-[76px]">
-        {/* Hero Section */}
-        <section id="hero" className="py-20 lg:py-24">
+      <main className="pt-[72px]">
+        {/* Hero Section (Balanced Scale & Understated Headshot Frame) */}
+        <section id="hero" className="py-16 lg:py-20">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-12 lg:gap-14 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.28fr_0.72fr] gap-10 lg:gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 text-[0.8125rem] font-bold uppercase tracking-[0.1em] text-[#168C8C] mb-4">
+                <div className="inline-flex items-center gap-2 text-[0.775rem] font-bold uppercase tracking-[0.1em] text-[#168C8C] mb-3.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#168C8C]"></span> Executive Profile
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] tracking-[-0.03em] text-[#172033] mb-4">
+                <h1 className="text-2xl sm:text-3xl lg:text-[2.35rem] font-bold leading-[1.24] tracking-[-0.025em] text-[#172033] mb-3.5 max-w-[660px]">
                   I turn complex commercial operations into systems people can actually use, scale, and improve.
                 </h1>
 
-                <p className="text-[1.05rem] font-semibold text-[#0E6666] mb-4 leading-normal">
+                <p className="text-[0.975rem] font-semibold text-[#0E6666] mb-3.5 leading-normal">
                   Commercial Operations | Transformation | Process Design | Customer &amp; Sales Enablement | AI &amp; Automation
                 </p>
 
-                <p className="text-[1.0625rem] text-[#3D485C] leading-relaxed mb-8 max-w-[620px]">
+                <p className="text-[1rem] text-[#3D485C] leading-relaxed mb-7 max-w-[580px]">
                   I diagnose broken or inefficient commercial environments, design practical systems and scalable processes, implement them hands-on, enable team-wide adoption, and transfer ownership for sustainable growth.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3.5">
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="#initiatives"
-                    className="inline-flex items-center gap-2 bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-[0.95rem] px-6 py-3 rounded-[6px] transition-all hover:-translate-y-0.5 shadow-sm"
+                    className="inline-flex items-center gap-2 bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-[0.925rem] px-5 py-2.5 rounded-[6px] transition-all hover:-translate-y-0.5 shadow-sm"
                   >
                     View My Work <ArrowRight className="w-4 h-4" />
                   </a>
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 bg-white hover:bg-[#FAF9F6] text-[#172033] border border-[#E2E4E9] font-semibold text-[0.95rem] px-6 py-3 rounded-[6px] transition-all hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-2 bg-white hover:bg-[#FAF9F6] text-[#172033] border border-[#E2E4E9] font-semibold text-[0.925rem] px-5 py-2.5 rounded-[6px] transition-all hover:-translate-y-0.5"
                   >
                     Connect With Me
                   </a>
@@ -282,33 +278,30 @@ export default function Home() {
                     href="https://www.linkedin.com/in/kristyn-r-0410915/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[46px] h-[46px] rounded-[6px] bg-white hover:bg-[#E9F4F4] text-[#475467] hover:text-[#168C8C] border border-[#E2E4E9] hover:border-[#168C8C] flex items-center justify-center transition-all"
+                    className="w-[42px] h-[42px] rounded-[6px] bg-white hover:bg-[#E9F4F4] text-[#475467] hover:text-[#168C8C] border border-[#E2E4E9] hover:border-[#168C8C] flex items-center justify-center transition-all"
                     title="LinkedIn Profile"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Linkedin className="w-4 h-4" />
                   </a>
                 </div>
               </div>
 
-              {/* Headshot Card */}
+              {/* Headshot Card (Understated Executive Frame) */}
               <div className="flex justify-center lg:justify-end">
-                <div className="w-full max-w-[360px] bg-white rounded-2xl border border-[#E7E9ED] p-4 shadow-sm hover:shadow-md transition-all">
-                  <div className="w-full aspect-[4/4.7] rounded-xl overflow-hidden bg-[#E2E8F0] relative">
+                <div className="w-full max-w-[320px] bg-white rounded-xl border border-[#E7E9ED] p-3 shadow-sm hover:shadow-md transition-all">
+                  <div className="w-full aspect-[4/4.75] rounded-lg overflow-hidden bg-[#FAF9F6] border border-[#E2E4E9] relative">
                     <img
                       src="/headshot.jpg"
                       alt="Kristyn Rostan"
                       className="w-full h-full object-cover object-[center_15%]"
-                      onError={(e) => {
-                        (e.target as HTMLElement).style.display = 'none';
-                      }}
                     />
                   </div>
-                  <div className="mt-3.5 flex items-center justify-between px-1">
+                  <div className="mt-3 flex items-center justify-between px-1">
                     <div className="flex flex-col">
-                      <span className="font-bold text-[0.95rem] text-[#172033]">Kristyn Rostan</span>
-                      <span className="text-[0.775rem] text-[#64748B]">Greater Chicago Area</span>
+                      <span className="font-bold text-[0.9rem] text-[#172033]">Kristyn Rostan</span>
+                      <span className="text-[0.725rem] text-[#64748B]">Greater Chicago Area</span>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-[#0E6666] bg-[#E9F4F4] px-2.5 py-1 rounded-full">
+                    <span className="inline-flex items-center gap-1.5 text-[0.725rem] font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 px-2 py-0.5 rounded-full">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#168C8C]"></span> Available
                     </span>
                   </div>
@@ -319,40 +312,40 @@ export default function Home() {
         </section>
 
         {/* Executive Summary & Metrics */}
-        <section id="about" className="py-20 bg-[#F0EFEB] border-y border-[#E2E4E9]">
+        <section id="about" className="py-16 bg-[#F0EFEB] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Executive Summary</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Bridging High-Level Commercial Strategy &amp; Hands-On Execution</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Bridging High-Level Commercial Strategy &amp; Hands-On Execution</h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 mb-12">
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-[#172033] mb-4">The Transformation Philosophy</h3>
-                <p className="text-[#3D485C] leading-relaxed mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-7 mb-10">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm">
+                <h3 className="text-lg font-bold text-[#172033] mb-3">The Transformation Philosophy</h3>
+                <p className="text-[#3D485C] text-sm leading-relaxed mb-3">
                   I specialize in fixing commercial environments with missing logic: CRMs without structure, sales teams lacking enablement tools, marketing functions in transition, and post-acquisition organizations operating as disconnected silos.
                 </p>
-                <p className="text-[#3D485C] leading-relaxed mb-4">
+                <p className="text-[#3D485C] text-sm leading-relaxed mb-3">
                   My approach diagnoses what is actually wrong, designs system-wide fixes, and executes cross-functionally to make changes permanent.
                 </p>
-                <p className="text-[#3D485C] leading-relaxed">
+                <p className="text-[#3D485C] text-sm leading-relaxed">
                   I build working systems, enable teams through structured training, and transfer ownership for sustainable operational performance.
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-[#172033] mb-4">Proven Industry Track Record</h3>
-                <div className="space-y-4">
-                  <div className="pb-3 border-b border-[#E2E4E9]">
-                    <span className="font-bold text-sm text-[#172033] block">Director of Commercial Strategy &amp; Ops at PGL:</span>
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm flex flex-col justify-between">
+                <h3 className="text-lg font-bold text-[#172033] mb-3">Proven Industry Track Record</h3>
+                <div className="space-y-3">
+                  <div className="pb-2.5 border-b border-[#E2E4E9]">
+                    <span className="font-bold text-xs text-[#172033] block">Director of Commercial Strategy &amp; Ops at PGL:</span>
                     <span className="text-xs text-[#475467] leading-relaxed">Rebuilt Dynamics 365 environment, stood up sales enablement &amp; client success, managed interim marketing.</span>
                   </div>
-                  <div className="pb-3 border-b border-[#E2E4E9]">
-                    <span className="font-bold text-sm text-[#172033] block">Global Commercial Ops Director at SEKO Logistics:</span>
+                  <div className="pb-2.5 border-b border-[#E2E4E9]">
+                    <span className="font-bold text-xs text-[#172033] block">Global Commercial Ops Director at SEKO Logistics:</span>
                     <span className="text-xs text-[#475467] leading-relaxed">Scaled BDR programs, led M&amp;A commercial integration, and owned global sales expense ROI.</span>
                   </div>
                   <div>
-                    <span className="font-bold text-sm text-[#172033] block">17+ Years at Expeditors:</span>
+                    <span className="font-bold text-xs text-[#172033] block">17+ Years at Expeditors:</span>
                     <span className="text-xs text-[#475467] leading-relaxed">Rose from Accounts Receivable to Global Process Improvement Manager, driving multi-million dollar account expansions and EDI billing timelines down by 50%.</span>
                   </div>
                 </div>
@@ -361,20 +354,20 @@ export default function Home() {
 
             {/* Metrics Banner */}
             <div className="grid grid-cols-2 md:grid-cols-4 bg-white rounded-2xl border border-[#E7E9ED] shadow-sm divide-y md:divide-y-0 md:divide-x divide-[#E2E4E9]">
-              <div className="p-6 text-center">
-                <div className="text-3xl font-bold text-[#168C8C] mb-1">20+</div>
+              <div className="p-5 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#168C8C] mb-0.5">20+</div>
                 <div className="text-xs font-semibold text-[#475467]">Years Leadership</div>
               </div>
-              <div className="p-6 text-center">
-                <div className="text-3xl font-bold text-[#168C8C] mb-1">39K+</div>
+              <div className="p-5 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#168C8C] mb-0.5">39K+</div>
                 <div className="text-xs font-semibold text-[#475467]">CRM Prospect Records Restructured</div>
               </div>
-              <div className="p-6 text-center">
-                <div className="text-3xl font-bold text-[#168C8C] mb-1">60%+</div>
+              <div className="p-5 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#168C8C] mb-0.5">60%+</div>
                 <div className="text-xs font-semibold text-[#475467]">CRM Engagement Uplift</div>
               </div>
-              <div className="p-6 text-center">
-                <div className="text-3xl font-bold text-[#168C8C] mb-1">50%</div>
+              <div className="p-5 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#168C8C] mb-0.5">50%</div>
                 <div className="text-xs font-semibold text-[#475467]">Cycle Time Reduction in EDI Billing</div>
               </div>
             </div>
@@ -382,96 +375,96 @@ export default function Home() {
         </section>
 
         {/* What I Do Best (4 Clean Pillars with Lucide Icons) */}
-        <section id="focus" className="py-20">
+        <section id="focus" className="py-16">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Core Capabilities</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">What I Do Best</h2>
-              <p className="text-[#475467]">Practical transformation focused on real operational execution, sustainable adoption, and measurable business outcomes.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">What I Do Best</h2>
+              <p className="text-[#475467] text-sm">Practical transformation focused on real operational execution, sustainable adoption, and measurable business outcomes.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Pillar 1: Search */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                  <div className="flex items-center justify-between mb-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
                       <Search className="w-5 h-5" />
                     </div>
-                    <span className="text-[#64748B] font-bold text-sm">01</span>
+                    <span className="text-[#64748B] font-bold text-xs">01</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#172033] mb-3">Diagnose What Is Not Working</h3>
-                  <p className="text-[#475467] text-sm leading-relaxed mb-6">
+                  <h3 className="text-lg font-bold text-[#172033] mb-2">Diagnose What Is Not Working</h3>
+                  <p className="text-[#475467] text-xs md:text-sm leading-relaxed mb-5">
                     Deep-dive discovery to pinpoint underlying operational friction, data silos, CRM architecture breakdowns, and cross-functional bottlenecks.
                   </p>
                 </div>
-                <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Desk-level process mapping &amp; root cause problem solving</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> CRM data model audit &amp; pipeline maturity assessment</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Identifying margin leakage &amp; quote turnaround bottlenecks</li>
+                <ul className="space-y-2 pt-3.5 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Desk-level process mapping &amp; root cause problem solving</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> CRM data model audit &amp; pipeline maturity assessment</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Identifying margin leakage &amp; quote turnaround bottlenecks</li>
                 </ul>
               </div>
 
               {/* Pillar 2: Layers */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                  <div className="flex items-center justify-between mb-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
                       <Layers className="w-5 h-5" />
                     </div>
-                    <span className="text-[#64748B] font-bold text-sm">02</span>
+                    <span className="text-[#64748B] font-bold text-xs">02</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#172033] mb-3">Design Practical Systems &amp; Processes</h3>
-                  <p className="text-[#475467] text-sm leading-relaxed mb-6">
+                  <h3 className="text-lg font-bold text-[#172033] mb-2">Design Practical Systems &amp; Processes</h3>
+                  <p className="text-[#475467] text-xs md:text-sm leading-relaxed mb-5">
                     Architecting intuitive, scalable standard operating procedures and technical workflows that eliminate complexity and fit seamlessly into daily work.
                   </p>
                 </div>
-                <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Standard Operating Procedure (SOP) design &amp; whiteboard mapping</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Margin guidance, quote desk workflows &amp; onboarding playbooks</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Power BI reporting, KPI tracking (NPS, churn, EBIT risk)</li>
+                <ul className="space-y-2 pt-3.5 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Standard Operating Procedure (SOP) design &amp; whiteboard mapping</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Margin guidance, quote desk workflows &amp; onboarding playbooks</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Power BI reporting, KPI tracking (NPS, churn, EBIT risk)</li>
                 </ul>
               </div>
 
               {/* Pillar 3: RefreshCw */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                  <div className="flex items-center justify-between mb-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
                       <RefreshCw className="w-5 h-5" />
                     </div>
-                    <span className="text-[#64748B] font-bold text-sm">03</span>
+                    <span className="text-[#64748B] font-bold text-xs">03</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#172033] mb-3">Implement &amp; Enable Adoption</h3>
-                  <p className="text-[#475467] text-sm leading-relaxed mb-6">
+                  <h3 className="text-lg font-bold text-[#172033] mb-2">Implement &amp; Enable Adoption</h3>
+                  <p className="text-[#475467] text-xs md:text-sm leading-relaxed mb-5">
                     Leading hands-on execution and change management to ensure tools and workflows are enthusiastically embraced by sales and operations teams.
                   </p>
                 </div>
-                <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> 5x Janek-certified sales training &amp; Freight Forwarding 101 curricula</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Inside sales &amp; BDR program execution with scripts &amp; cadences</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Dynamics 365 &amp; Salesforce administration and tool rollout</li>
+                <ul className="space-y-2 pt-3.5 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> 5x Janek-certified sales training &amp; Freight Forwarding 101 curricula</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Inside sales &amp; BDR program execution with scripts &amp; cadences</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Dynamics 365 &amp; Salesforce administration and tool rollout</li>
                 </ul>
               </div>
 
               {/* Pillar 4: Handshake */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md hover:border-[#168C8C]/40 transition-all flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                  <div className="flex items-center justify-between mb-3.5">
+                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
                       <Handshake className="w-5 h-5" />
                     </div>
-                    <span className="text-[#64748B] font-bold text-sm">04</span>
+                    <span className="text-[#64748B] font-bold text-xs">04</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#172033] mb-3">Transfer Ownership &amp; Improve</h3>
-                  <p className="text-[#475467] text-sm leading-relaxed mb-6">
+                  <h3 className="text-lg font-bold text-[#172033] mb-2">Transfer Ownership &amp; Improve</h3>
+                  <p className="text-[#475467] text-xs md:text-sm leading-relaxed mb-5">
                     Establishing internal governance and champion networks so teams independently run, maintain, and continuously enhance their operations.
                   </p>
                 </div>
-                <ul className="space-y-2 pt-4 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Training internal system owners &amp; regional process champions</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Clear governance standards and transition playbooks</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#168C8C] flex-shrink-0" /> Continuous improvement loops using Lean &amp; Six Sigma principles</li>
+                <ul className="space-y-2 pt-3.5 border-t border-[#E2E4E9] text-xs text-[#3D485C]">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Training internal system owners &amp; regional process champions</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Clear governance standards and transition playbooks</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#168C8C] flex-shrink-0" /> Continuous improvement loops using Lean &amp; Six Sigma principles</li>
                 </ul>
               </div>
             </div>
@@ -479,16 +472,16 @@ export default function Home() {
         </section>
 
         {/* How I Work (Visual Process Pipeline with Lucide Icons) */}
-        <section id="how-i-work" className="py-20 bg-[#EEF3F5] border-y border-[#E2E4E9]">
+        <section id="how-i-work" className="py-16 bg-[#EEF3F5] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Transformation Methodology</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">How I Work</h2>
-              <p className="text-[#475467]">A disciplined, end-to-end framework designed to build sustainable capabilities without creating permanent administrative bottlenecks.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">How I Work</h2>
+              <p className="text-[#475467] text-sm">A disciplined, end-to-end framework designed to build sustainable capabilities without creating permanent administrative bottlenecks.</p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 md:p-10 shadow-sm">
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-8">
+            <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 md:p-8 shadow-sm">
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 mb-6">
                 {[
                   { step: "01", name: "Observe", desc: "Desk-level observation of daily realities", icon: Eye },
                   { step: "02", name: "Diagnose", desc: "Identify root cause issues and process friction", icon: Search },
@@ -500,19 +493,19 @@ export default function Home() {
                 ].map((item) => {
                   const StepIcon = item.icon;
                   return (
-                    <div key={item.step} className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-xl p-4 text-center hover:bg-[#E9F4F4] hover:border-[#168C8C] transition-all flex flex-col items-center">
-                      <div className="w-9 h-9 rounded-md bg-white border border-[#E2E4E9] text-[#168C8C] flex items-center justify-center mb-2">
-                        <StepIcon className="w-4 h-4" />
+                    <div key={item.step} className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-lg p-3 text-center hover:bg-[#E9F4F4] hover:border-[#168C8C] transition-all flex flex-col items-center">
+                      <div className="w-8 h-8 rounded-md bg-white border border-[#E2E4E9] text-[#168C8C] flex items-center justify-center mb-1.5">
+                        <StepIcon className="w-3.5 h-3.5" />
                       </div>
-                      <span className="text-[0.7rem] font-bold uppercase text-[#168C8C] block mb-0.5">Step {item.step}</span>
-                      <span className="font-bold text-sm text-[#172033] block mb-1">{item.name}</span>
-                      <span className="text-[0.725rem] text-[#64748B] leading-tight block">{item.desc}</span>
+                      <span className="text-[0.675rem] font-bold uppercase text-[#168C8C] block mb-0.5">Step {item.step}</span>
+                      <span className="font-bold text-xs text-[#172033] block mb-0.5">{item.name}</span>
+                      <span className="text-[0.675rem] text-[#64748B] leading-tight block">{item.desc}</span>
                     </div>
                   );
                 })}
               </div>
 
-              <div className="bg-[#E9F4F4] border-l-4 border-[#168C8C] p-4 rounded-r-lg text-xs md:text-sm text-[#172033] leading-relaxed">
+              <div className="bg-[#E9F4F4] border-l-4 border-[#168C8C] p-3.5 rounded-r-lg text-xs md:text-sm text-[#172033] leading-relaxed">
                 <strong className="text-[#0E6666]">Sustainable Transformation:</strong> I build and improve systems so teams can independently operate and scale them, deliberately avoiding becoming the permanent administrator or help desk for what I create.
               </div>
             </div>
@@ -520,47 +513,47 @@ export default function Home() {
         </section>
 
         {/* Selected Impact (Case Studies with Lucide Icons) */}
-        <section id="initiatives" className="py-20">
+        <section id="initiatives" className="py-16">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Case Studies</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Selected Impact &amp; Key Initiatives</h2>
-              <p className="text-[#475467]">Real-world commercial transformation projects highlighting the challenge, tactical intervention, and business outcomes.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Selected Impact &amp; Key Initiatives</h2>
+              <p className="text-[#475467] text-sm">Real-world commercial transformation projects highlighting the challenge, tactical intervention, and business outcomes.</p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               {/* Case 1 */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-5 h-5" />
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md transition-all">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-5 border-b border-[#E2E4E9] gap-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Revenue Management &amp; Quoting</span>
-                      <h3 className="text-lg font-bold text-[#172033]">Centralized Corporate International Quote Team &amp; Margin Guidance</h3>
+                      <span className="text-[0.725rem] font-bold uppercase tracking-wider text-[#168C8C] block">Revenue Management &amp; Quoting</span>
+                      <h3 className="text-base sm:text-lg font-bold text-[#172033]">Centralized Corporate International Quote Team &amp; Margin Guidance</h3>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
-                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> SEKO Logistics
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-2.5 py-0.5 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3 h-3 text-[#168C8C]" /> SEKO Logistics
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs md:text-sm">
                   <div>
-                    <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5" /> Problem
+                    <span className="font-bold text-[#9A3412] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <AlertTriangle className="w-3 h-3" /> Problem
                     </span>
                     <p className="text-[#475467] leading-relaxed">Decentralized international quoting lacked standardized margin control, leading to inconsistent pricing, margin leakage, and limited visibility into win/loss performance.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <Wrench className="w-3.5 h-3.5" /> What I Did
+                    <span className="font-bold text-[#172033] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <Wrench className="w-3 h-3" /> What I Did
                     </span>
                     <p className="text-[#475467] leading-relaxed">Managed the Corporate International quote team, partnering with product leadership on margin guidance and win/loss analysis using Magaya and WebCargo.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
+                    <span className="font-bold text-[#0E6666] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <CircleCheck className="w-3 h-3" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Established structured quoting governance, protected gross margins, and provided real-time pricing intelligence to commercial leadership.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -571,37 +564,37 @@ export default function Home() {
               </div>
 
               {/* Case 2 */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                      <LayoutDashboard className="w-5 h-5" />
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md transition-all">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-5 border-b border-[#E2E4E9] gap-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <LayoutDashboard className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">CRM Strategy &amp; Administration</span>
-                      <h3 className="text-lg font-bold text-[#172033]">Microsoft Dynamics 365 Architecture &amp; 39,000+ Record Matching</h3>
+                      <span className="text-[0.725rem] font-bold uppercase tracking-wider text-[#168C8C] block">CRM Strategy &amp; Administration</span>
+                      <h3 className="text-base sm:text-lg font-bold text-[#172033]">Microsoft Dynamics 365 Architecture &amp; 39,000+ Record Matching</h3>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
-                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> PGL (Perimeter Global Logistics)
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-2.5 py-0.5 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3 h-3 text-[#168C8C]" /> PGL (Perimeter Global Logistics)
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs md:text-sm">
                   <div>
-                    <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5" /> Problem
+                    <span className="font-bold text-[#9A3412] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <AlertTriangle className="w-3 h-3" /> Problem
                     </span>
                     <p className="text-[#475467] leading-relaxed">Over 39,000 unorganized prospect records in Microsoft Dynamics 365 caused data duplication, unclear lead routing, and low commercial visibility across sales pipelines.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <Wrench className="w-3.5 h-3.5" /> What I Did
+                    <span className="font-bold text-[#172033] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <Wrench className="w-3 h-3" /> What I Did
                     </span>
                     <p className="text-[#475467] leading-relaxed">Owned CRM strategy and operations on Microsoft Dynamics 365, including lead pipeline management, segmentation, and large-scale prospect-to-CRM matching across 39,000+ records.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
+                    <span className="font-bold text-[#0E6666] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <CircleCheck className="w-3 h-3" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Restructured the CRM environment into a reliable foundation for sales targeting, lead segmentation, and commercial executive reporting.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -612,37 +605,37 @@ export default function Home() {
               </div>
 
               {/* Case 3 */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                      <ClipboardList className="w-5 h-5" />
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md transition-all">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-5 border-b border-[#E2E4E9] gap-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <ClipboardList className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">M&amp;A Integration &amp; Client Success</span>
-                      <h3 className="text-lg font-bold text-[#172033]">Transition &amp; Implementation Program for Strategic Accounts</h3>
+                      <span className="text-[0.725rem] font-bold uppercase tracking-wider text-[#168C8C] block">M&amp;A Integration &amp; Client Success</span>
+                      <h3 className="text-base sm:text-lg font-bold text-[#172033]">Transition &amp; Implementation Program for Strategic Accounts</h3>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
-                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> SEKO Logistics
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-2.5 py-0.5 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3 h-3 text-[#168C8C]" /> SEKO Logistics
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs md:text-sm">
                   <div>
-                    <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5" /> Problem
+                    <span className="font-bold text-[#9A3412] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <AlertTriangle className="w-3 h-3" /> Problem
                     </span>
                     <p className="text-[#475467] leading-relaxed">Acquired logistics companies and major enterprise client wins needed a formalized framework to prevent churn and integrate smoothly into network operations.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <Wrench className="w-3.5 h-3.5" /> What I Did
+                    <span className="font-bold text-[#172033] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <Wrench className="w-3 h-3" /> What I Did
                     </span>
                     <p className="text-[#475467] leading-relaxed">Led commercial integration of acquisitions to maximize synergy realization, and created the Transition &amp; Implementation program for onboarding new accounts and Strategic Partners into the SEKO network.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
+                    <span className="font-bold text-[#0E6666] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <CircleCheck className="w-3 h-3" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Ensured acquired entities were rapidly absorbed into the commercial organization and accelerated successful account go-lives across the network.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -653,37 +646,37 @@ export default function Home() {
               </div>
 
               {/* Case 4 */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="w-5 h-5" />
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md transition-all">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-5 border-b border-[#E2E4E9] gap-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Sales Enablement &amp; Team Building</span>
-                      <h3 className="text-lg font-bold text-[#172033]">BDR Program Launch &amp; 60%+ CRM Adoption Transformation</h3>
+                      <span className="text-[0.725rem] font-bold uppercase tracking-wider text-[#168C8C] block">Sales Enablement &amp; Team Building</span>
+                      <h3 className="text-base sm:text-lg font-bold text-[#172033]">BDR Program Launch &amp; 60%+ CRM Adoption Transformation</h3>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
-                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> SEKO Logistics
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-2.5 py-0.5 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3 h-3 text-[#168C8C]" /> SEKO Logistics
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs md:text-sm">
                   <div>
-                    <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5" /> Problem
+                    <span className="font-bold text-[#9A3412] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <AlertTriangle className="w-3 h-3" /> Problem
                     </span>
                     <p className="text-[#475467] leading-relaxed">Lack of structured inside sales lead generation and historically low CRM utilization across regional and branch sales teams.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <Wrench className="w-3.5 h-3.5" /> What I Did
+                    <span className="font-bold text-[#172033] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <Wrench className="w-3 h-3" /> What I Did
                     </span>
                     <p className="text-[#475467] leading-relaxed">Launched and managed SEKO's BDR program from scratch (scripts, cadences, KPIs); partnered with vendor on tool redesign to drive adoption; delivered new-hire sales training (Freight Forwarding 101).</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
+                    <span className="font-bold text-[#0E6666] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <CircleCheck className="w-3 h-3" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Increased sales performance visibility by 100%, grew CRM adoption from low engagement to 60%+ usage, and earned the 2018 SEKO Logistics Service Excellence Award.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -694,37 +687,37 @@ export default function Home() {
               </div>
 
               {/* Case 5 */}
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm hover:shadow-md transition-all">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-[#E2E4E9] gap-2">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                      <Globe className="w-5 h-5" />
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm hover:shadow-md transition-all">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-5 border-b border-[#E2E4E9] gap-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                      <Globe className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#168C8C] block">Global Business Process Improvement</span>
-                      <h3 className="text-lg font-bold text-[#172033]">Global EDI Billing Process Design &amp; 50% Cycle Time Reduction</h3>
+                      <span className="text-[0.725rem] font-bold uppercase tracking-wider text-[#168C8C] block">Global Business Process Improvement</span>
+                      <h3 className="text-base sm:text-lg font-bold text-[#172033]">Global EDI Billing Process Design &amp; 50% Cycle Time Reduction</h3>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
-                    <Building2 className="w-3.5 h-3.5 text-[#168C8C]" /> Expeditors International
+                  <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-2.5 py-0.5 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+                    <Building2 className="w-3 h-3 text-[#168C8C]" /> Expeditors International
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs md:text-sm">
                   <div>
-                    <span className="font-bold text-[#9A3412] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5" /> Problem
+                    <span className="font-bold text-[#9A3412] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <AlertTriangle className="w-3 h-3" /> Problem
                     </span>
                     <p className="text-[#475467] leading-relaxed">Complex electronic billing requests took extended deployment timelines and required improved global invoicing accuracy.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#172033] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <Wrench className="w-3.5 h-3.5" /> What I Did
+                    <span className="font-bold text-[#172033] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <Wrench className="w-3 h-3" /> What I Did
                     </span>
                     <p className="text-[#475467] leading-relaxed">Designed an EDI billing process from request through deployment, served on the Global Billing Initiative core team, and delivered global training on Effective Problem Solving and Process Mapping.</p>
                   </div>
                   <div>
-                    <span className="font-bold text-[#0E6666] uppercase text-[0.725rem] tracking-wider block mb-1 flex items-center gap-1.5">
-                      <CircleCheck className="w-3.5 h-3.5" /> Outcome
+                    <span className="font-bold text-[#0E6666] uppercase text-[0.7rem] tracking-wider block mb-1 flex items-center gap-1.5">
+                      <CircleCheck className="w-3 h-3" /> Outcome
                     </span>
                     <p className="text-[#475467] leading-relaxed">Reduced average project timeline by 50% and supported the initiative reaching 88.8% invoicing quality globally by March 2015.</p>
                     <div className="mt-2 text-xs font-semibold text-[#0E6666] bg-[#E9F4F4] border border-[#168C8C]/20 p-2 rounded">
@@ -738,16 +731,16 @@ export default function Home() {
         </section>
 
         {/* Experience Timeline Section (Lucide Icons: Building2, Calendar, MapPin, Globe) */}
-        <section id="experience" className="py-20 bg-[#F0EFEB] border-y border-[#E2E4E9]">
+        <section id="experience" className="py-16 bg-[#F0EFEB] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Career History</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Leadership Experience</h2>
-              <p className="text-[#475467]">A history of process transformation, commercial growth, and team building across global 3PLs and freight forwarders.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Leadership Experience</h2>
+              <p className="text-[#475467] text-sm">A history of process transformation, commercial growth, and team building across global 3PLs and freight forwarders.</p>
             </div>
 
             {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-7">
               {[
                 { id: "all", label: "All Roles" },
                 { id: "pgl", label: "PGL" },
@@ -758,7 +751,7 @@ export default function Home() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveFilter(tab.id as any)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                     activeFilter === tab.id
                       ? "bg-[#172033] text-white"
                       : "bg-white text-[#475467] border border-[#E2E4E9] hover:bg-[#FAF9F6]"
@@ -770,31 +763,31 @@ export default function Home() {
             </div>
 
             {/* Experience Cards */}
-            <div className="space-y-6">
+            <div className="space-y-5">
               {filteredExperience.map((exp, idx) => (
-                <div key={idx} className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-[#E2E4E9] gap-2">
+                <div key={idx} className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-3.5 border-b border-[#E2E4E9] gap-2">
                     <div>
                       <span className="font-bold text-base text-[#172033] flex items-center gap-2">
                         <Building2 className="w-4 h-4 text-[#168C8C]" /> {exp.company}
                       </span>
-                      <h3 className="text-sm font-semibold text-[#168C8C]">{exp.role}</h3>
+                      <h3 className="text-xs sm:text-sm font-semibold text-[#168C8C]">{exp.role}</h3>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1 rounded-full flex items-center gap-1.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="text-xs font-semibold text-[#475467] bg-[#FAF9F6] border border-[#E2E4E9] px-2.5 py-0.5 rounded-full flex items-center gap-1.5">
                         <Calendar className="w-3 h-3 text-[#64748B]" /> {exp.period}
                       </span>
                       {exp.location && (
                         <span className="text-xs text-[#64748B] flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-[#168C8C]" /> {exp.location}
+                          <MapPin className="w-3 h-3 text-[#168C8C]" /> {exp.location}
                         </span>
                       )}
                     </div>
                   </div>
-                  <ul className="space-y-2.5 text-xs md:text-sm text-[#3D485C]">
+                  <ul className="space-y-2 text-xs md:text-sm text-[#3D485C]">
                     {exp.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2.5">
-                        <span className="text-[#168C8C] font-bold text-base leading-none mt-0.5">•</span>
+                      <li key={bIdx} className="flex items-start gap-2">
+                        <span className="text-[#168C8C] font-bold text-sm leading-none mt-0.5">•</span>
                         <span className="leading-relaxed">{bullet}</span>
                       </li>
                     ))}
@@ -806,47 +799,47 @@ export default function Home() {
         </section>
 
         {/* Applied AI & Automation Section (Lucide Icons: Brain, Bot, Workflow) */}
-        <section id="ai-automation" className="py-20">
+        <section id="ai-automation" className="py-16">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Digital Evolution</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Applied AI &amp; Automation in Operations</h2>
-              <p className="text-[#475467]">Bridging deep operational fundamentals with modern automation to eliminate repetitive friction.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Applied AI &amp; Automation in Operations</h2>
+              <p className="text-[#475467] text-sm">Bridging deep operational fundamentals with modern automation to eliminate repetitive friction.</p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm mb-6">
-              <p className="text-[#172033] text-sm md:text-base leading-relaxed">
+            <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm mb-5">
+              <p className="text-[#172033] text-xs md:text-sm leading-relaxed">
                 I am actively building skills in AI, automation, agents, and digital transformation—applying practical AI, workflow automations, and intelligent tools directly to real-world commercial operations to enhance CRM data accuracy, accelerate SOP generation, and eliminate manual bottlenecks while keeping operational strategy and human judgment at the core.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-4">
-                  <Brain className="w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-5 shadow-sm">
+                <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-3.5">
+                  <Brain className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-base text-[#172033] mb-2">Commercial Data Enrichment</h3>
-                <p className="text-xs md:text-sm text-[#475467] leading-relaxed">
+                <h3 className="font-bold text-sm text-[#172033] mb-1.5">Commercial Data Enrichment</h3>
+                <p className="text-xs text-[#475467] leading-relaxed">
                   Automating lead scoring, firmographic enrichment, and prospect classification to keep CRM data clean and actionable for sales reps without manual entry fatigue.
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-4">
-                  <Bot className="w-5 h-5" />
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-5 shadow-sm">
+                <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-3.5">
+                  <Bot className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-base text-[#172033] mb-2">Intelligent SOP &amp; Playbook Extraction</h3>
-                <p className="text-xs md:text-sm text-[#475467] leading-relaxed">
+                <h3 className="font-bold text-sm text-[#172033] mb-1.5">Intelligent SOP &amp; Playbook Extraction</h3>
+                <p className="text-xs text-[#475467] leading-relaxed">
                   Leveraging AI tools to rapidly structure raw process recordings, interview notes, and workflows into crisp, standardized operational documentation.
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-4">
-                  <Workflow className="w-5 h-5" />
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-5 shadow-sm">
+                <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center mb-3.5">
+                  <Workflow className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-base text-[#172033] mb-2">Workflow &amp; Quote Routing Automation</h3>
-                <p className="text-xs md:text-sm text-[#475467] leading-relaxed">
+                <h3 className="font-bold text-sm text-[#172033] mb-1.5">Workflow &amp; Quote Routing Automation</h3>
+                <p className="text-xs text-[#475467] leading-relaxed">
                   Building streamlined routing rules and triage systems that ensure inquiries, bids, and client escalations instantly reach the right desk with all needed context.
                 </p>
               </div>
@@ -855,43 +848,43 @@ export default function Home() {
         </section>
 
         {/* Technology Stack Section (Lucide Icons: Database, TrendingUp, Package, Workflow) */}
-        <section id="tech-stack" className="py-20 bg-[#F0EFEB] border-y border-[#E2E4E9]">
+        <section id="tech-stack" className="py-16 bg-[#F0EFEB] border-y border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Tech Stack &amp; Software</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Technology Stack &amp; Logistics Tools</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Technology Stack &amp; Logistics Tools</h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <h3 className="font-bold text-sm text-[#172033] mb-3 flex items-center gap-2">
-                  <Database className="w-4 h-4 text-[#168C8C]" /> Enterprise CRM
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-5 shadow-sm">
+                <h3 className="font-bold text-xs text-[#172033] mb-2.5 flex items-center gap-2">
+                  <Database className="w-3.5 h-3.5 text-[#168C8C]" /> Enterprise CRM
                 </h3>
-                <ul className="space-y-2 text-xs text-[#475467]">
-                  <li className="flex items-center justify-between">Microsoft Dynamics 365 <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1.5 py-0.5 rounded text-[0.65rem] text-[#64748B]">Admin</span></li>
-                  <li className="flex items-center justify-between">Salesforce CRM <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1.5 py-0.5 rounded text-[0.65rem] text-[#64748B]">Admin</span></li>
+                <ul className="space-y-1.5 text-xs text-[#475467]">
+                  <li className="flex items-center justify-between">Microsoft Dynamics 365 <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1 py-0.5 rounded text-[0.65rem] text-[#64748B]">Admin</span></li>
+                  <li className="flex items-center justify-between">Salesforce CRM <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1 py-0.5 rounded text-[0.65rem] text-[#64748B]">Admin</span></li>
                   <li>Architecture &amp; Data Modeling</li>
                   <li>39,000+ Record Cleanup</li>
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <h3 className="font-bold text-sm text-[#172033] mb-3 flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-[#168C8C]" /> BI &amp; Analytics
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-5 shadow-sm">
+                <h3 className="font-bold text-xs text-[#172033] mb-2.5 flex items-center gap-2">
+                  <TrendingUp className="w-3.5 h-3.5 text-[#168C8C]" /> BI &amp; Analytics
                 </h3>
-                <ul className="space-y-2 text-xs text-[#475467]">
-                  <li className="flex items-center justify-between">Microsoft Power BI <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1.5 py-0.5 rounded text-[0.65rem] text-[#64748B]">Advanced</span></li>
+                <ul className="space-y-1.5 text-xs text-[#475467]">
+                  <li className="flex items-center justify-between">Microsoft Power BI <span className="bg-[#FAF9F6] border border-[#E2E4E9] px-1 py-0.5 rounded text-[0.65rem] text-[#64748B]">Advanced</span></li>
                   <li>Real-Time Revenue Management</li>
                   <li>EBIT Risk &amp; ROSE Models</li>
                   <li>Executive C-Suite Reporting</li>
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <h3 className="font-bold text-sm text-[#172033] mb-3 flex items-center gap-2">
-                  <Package className="w-4 h-4 text-[#168C8C]" /> Logistics &amp; Quoting
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-5 shadow-sm">
+                <h3 className="font-bold text-xs text-[#172033] mb-2.5 flex items-center gap-2">
+                  <Package className="w-3.5 h-3.5 text-[#168C8C]" /> Logistics &amp; Quoting
                 </h3>
-                <ul className="space-y-2 text-xs text-[#475467]">
+                <ul className="space-y-1.5 text-xs text-[#475467]">
                   <li>CargoWise / Logixboard / NEO</li>
                   <li>Magaya &amp; WebCargo</li>
                   <li>International Quote Management</li>
@@ -899,11 +892,11 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-6 shadow-sm">
-                <h3 className="font-bold text-sm text-[#172033] mb-3 flex items-center gap-2">
-                  <Workflow className="w-4 h-4 text-[#168C8C]" /> Process &amp; Integration
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-5 shadow-sm">
+                <h3 className="font-bold text-xs text-[#172033] mb-2.5 flex items-center gap-2">
+                  <Workflow className="w-3.5 h-3.5 text-[#168C8C]" /> Process &amp; Integration
                 </h3>
-                <ul className="space-y-2 text-xs text-[#475467]">
+                <ul className="space-y-1.5 text-xs text-[#475467]">
                   <li>EDI &amp; System Integration</li>
                   <li>Billing Workflow Design</li>
                   <li>Document Imaging Integration</li>
@@ -915,25 +908,25 @@ export default function Home() {
         </section>
 
         {/* Credentials & Education Section (Lucide Icons: Award, GraduationCap) */}
-        <section id="credentials" className="py-20">
+        <section id="credentials" className="py-16">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="mb-12 max-w-[780px]">
+            <div className="mb-10 max-w-[780px]">
               <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Certifications &amp; Learning</span>
-              <h2 className="text-3xl font-bold text-[#172033] mt-2 mb-3">Education &amp; Professional Certifications</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Education &amp; Professional Certifications</h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6">
-              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 shadow-sm">
-                <div className="flex items-center gap-3.5 mb-4">
-                  <div className="w-11 h-11 rounded-[8px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-5">
+              <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 shadow-sm">
+                <div className="flex items-center gap-3 mb-3.5">
+                  <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                    <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-[#172033]">Janek Performance Group</h3>
+                    <h3 className="font-bold text-base text-[#172033]">Janek Performance Group</h3>
                     <span className="text-xs text-[#64748B]">Certified Across 5 Core Sales Methodologies</span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-1.5 mt-3.5">
                   {[
                     "Critical Selling (Train-the-Trainer)",
                     "Critical Negotiation",
@@ -941,29 +934,29 @@ export default function Home() {
                     "Selling to the C-Suite",
                     "Strategic Storytelling"
                   ].map((cert, idx) => (
-                    <span key={idx} className="text-xs font-semibold text-[#172033] bg-[#FAF9F6] border border-[#E2E4E9] px-3 py-1.5 rounded-[6px]">
+                    <span key={idx} className="text-xs font-semibold text-[#172033] bg-[#FAF9F6] border border-[#E2E4E9] px-2.5 py-1 rounded-[5px]">
                       {cert}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
-                  <h4 className="font-bold text-sm text-[#172033] mb-1 flex items-center gap-2">
-                    <GraduationCap className="w-4 h-4 text-[#168C8C]" /> Colorado State University
+              <div className="space-y-3.5">
+                <div className="bg-white rounded-xl border border-[#E7E9ED] p-4 shadow-sm">
+                  <h4 className="font-bold text-xs sm:text-sm text-[#172033] mb-0.5 flex items-center gap-1.5">
+                    <GraduationCap className="w-3.5 h-3.5 text-[#168C8C]" /> Colorado State University
                   </h4>
                   <p className="text-xs text-[#475467] leading-relaxed">Higher education academic foundation supporting business process improvement, leadership, and operational management.</p>
                 </div>
-                <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
-                  <h4 className="font-bold text-sm text-[#172033] mb-1 flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-[#168C8C]" /> Lean &amp; Six Sigma
+                <div className="bg-white rounded-xl border border-[#E7E9ED] p-4 shadow-sm">
+                  <h4 className="font-bold text-xs sm:text-sm text-[#172033] mb-0.5 flex items-center gap-1.5">
+                    <Layers className="w-3.5 h-3.5 text-[#168C8C]" /> Lean &amp; Six Sigma
                   </h4>
                   <p className="text-xs text-[#475467] leading-relaxed">Lean Enterprise–trained in root cause analysis, value stream mapping, and continuous improvement fundamentals.</p>
                 </div>
-                <div className="bg-white rounded-xl border border-[#E7E9ED] p-5 shadow-sm">
-                  <h4 className="font-bold text-sm text-[#172033] mb-1 flex items-center gap-2">
-                    <Award className="w-4 h-4 text-[#168C8C]" /> Service Excellence Award
+                <div className="bg-white rounded-xl border border-[#E7E9ED] p-4 shadow-sm">
+                  <h4 className="font-bold text-xs sm:text-sm text-[#172033] mb-0.5 flex items-center gap-1.5">
+                    <Award className="w-3.5 h-3.5 text-[#168C8C]" /> Service Excellence Award
                   </h4>
                   <p className="text-xs text-[#475467] leading-relaxed">SEKO Logistics (2018) – Recognized for outstanding leadership, field sales support, and organizational contribution.</p>
                 </div>
@@ -973,26 +966,26 @@ export default function Home() {
         </section>
 
         {/* Contact Section (Lucide Icons: Mail, Linkedin, MapPin, Copy) */}
-        <section id="contact" className="py-20 bg-[#EEF3F5] border-t border-[#E2E4E9]">
+        <section id="contact" className="py-16 bg-[#EEF3F5] border-t border-[#E2E4E9]">
           <div className="max-w-[1180px] mx-auto px-6">
-            <div className="bg-white rounded-2xl border border-[#E7E9ED] p-8 md:p-12 shadow-sm">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-white rounded-2xl border border-[#E7E9ED] p-7 md:p-10 shadow-sm">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div>
                   <span className="text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-[#168C8C]">Let's Connect</span>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-3">Ready to Transform Your Commercial Operations?</h2>
-                  <p className="text-sm text-[#475467] leading-relaxed mb-6">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#172033] mt-2 mb-2">Ready to Transform Your Commercial Operations?</h2>
+                  <p className="text-xs md:text-sm text-[#475467] leading-relaxed mb-5">
                     Exploring senior commercial operations and transformation roles in logistics, supply chain, and adjacent tech/consulting practices. Open to Chicago-based, remote, and selective relocation.
                   </p>
 
-                  <div className="space-y-4 my-6">
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5" />
+                  <div className="space-y-3.5 my-5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-[0.7rem] font-bold uppercase tracking-wider text-[#64748B]">Direct Email</div>
-                        <div className="flex items-center gap-2">
-                          <a href="mailto:krostan68@yahoo.com" className="font-semibold text-sm text-[#172033] hover:text-[#168C8C]">
+                        <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">Direct Email</div>
+                        <div className="flex items-center gap-1.5">
+                          <a href="mailto:krostan68@yahoo.com" className="font-semibold text-xs sm:text-sm text-[#172033] hover:text-[#168C8C]">
                             krostan68@yahoo.com
                           </a>
                           <button
@@ -1000,35 +993,35 @@ export default function Home() {
                             className="p-1 rounded text-[#64748B] hover:text-[#168C8C] hover:bg-[#E9F4F4] transition-colors"
                             title="Copy Email"
                           >
-                            {copiedEmail ? <Check className="w-4 h-4 text-[#168C8C]" /> : <Copy className="w-4 h-4" />}
+                            {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#168C8C]" /> : <Copy className="w-3.5 h-3.5" />}
                           </button>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                        <Linkedin className="w-5 h-5" />
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                        <Linkedin className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-[0.7rem] font-bold uppercase tracking-wider text-[#64748B]">LinkedIn Profile</div>
+                        <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">LinkedIn Profile</div>
                         <a
                           href="https://www.linkedin.com/in/kristyn-r-0410915/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-semibold text-sm text-[#172033] hover:text-[#168C8C]"
+                          className="font-semibold text-xs sm:text-sm text-[#172033] hover:text-[#168C8C]"
                         >
                           linkedin.com/in/kristyn-r-0410915
                         </a>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5" />
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-[0.7rem] font-bold uppercase tracking-wider text-[#64748B]">Location / Work Preference</div>
+                        <div className="text-[0.675rem] font-bold uppercase tracking-wider text-[#64748B]">Location / Work Preference</div>
                         <span className="font-medium text-xs text-[#475467]">Greater Chicago Area | Remote | Selective Relocation</span>
                       </div>
                     </div>
@@ -1036,48 +1029,48 @@ export default function Home() {
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleFormSubmit} className="space-y-4">
+                <form onSubmit={handleFormSubmit} className="space-y-3.5">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-bold text-[#172033] mb-1.5">Your Name</label>
+                    <label htmlFor="name" className="block text-xs font-bold text-[#172033] mb-1">Your Name</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       required
                       placeholder="Jane Doe"
-                      className="w-full px-3.5 py-2.5 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-sm text-[#172033]"
+                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033]"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold text-[#172033] mb-1.5">Your Email</label>
+                    <label htmlFor="email" className="block text-xs font-bold text-[#172033] mb-1">Your Email</label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       required
                       placeholder="jane@company.com"
-                      className="w-full px-3.5 py-2.5 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-sm text-[#172033]"
+                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033]"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-xs font-bold text-[#172033] mb-1.5">Message</label>
+                    <label htmlFor="message" className="block text-xs font-bold text-[#172033] mb-1">Message</label>
                     <textarea
                       id="message"
                       name="message"
                       rows={4}
                       required
                       placeholder="Hi Kristyn, I would love to connect regarding an opportunity..."
-                      className="w-full px-3.5 py-2.5 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-sm text-[#172033]"
+                      className="w-full px-3 py-2 rounded-[6px] border border-[#E2E4E9] bg-[#FAF9F6] focus:bg-white focus:outline-none focus:border-[#168C8C] text-xs sm:text-sm text-[#172033]"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-sm py-3.5 rounded-[6px] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                    className="w-full bg-[#168C8C] hover:bg-[#0E6666] text-white font-semibold text-xs sm:text-sm py-3 rounded-[6px] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
                   >
                     Send Message <ArrowRight className="w-4 h-4" />
                   </button>
                   {formSubmitted && (
-                    <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-3 rounded-[6px] flex items-center gap-2">
+                    <div className="bg-[#E9F4F4] border border-[#168C8C]/30 text-[#0E6666] text-xs p-2.5 rounded-[6px] flex items-center gap-2">
                       <CircleCheck className="w-4 h-4 flex-shrink-0" />
                       <span>Thank you! Your message draft has been prepared. You can also email directly at krostan68@yahoo.com.</span>
                     </div>
@@ -1090,10 +1083,10 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 bg-[#F7F6F2] border-t border-[#E2E4E9]">
-        <div className="max-w-[1180px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748B] gap-3">
-          <div className="flex items-center gap-2.5 font-bold text-[#172033]">
-            <div className="w-7 h-7 rounded-[4px] bg-[#168C8C] text-white flex items-center justify-center text-xs">KR</div>
+      <footer className="py-6 bg-[#F7F6F2] border-t border-[#E2E4E9]">
+        <div className="max-w-[1180px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748B] gap-2.5">
+          <div className="flex items-center gap-2 font-bold text-[#172033]">
+            <div className="w-6 h-6 rounded-[4px] bg-[#168C8C] text-white flex items-center justify-center text-xs">KR</div>
             <span>Kristyn Rostan</span>
           </div>
           <div>&copy; 2026 Kristyn Rostan. All rights reserved.</div>
