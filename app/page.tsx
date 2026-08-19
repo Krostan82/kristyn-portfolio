@@ -38,7 +38,10 @@ import {
   ClipboardList,
   Building2,
   UsersRound,
-  Package
+  Package,
+  Target,
+  Gauge,
+  ShieldCheck
 } from "lucide-react";
 
 export default function Home() {
@@ -1030,6 +1033,97 @@ export default function Home() {
                     <Award className="w-3.5 h-3.5 text-[#168C8C]" /> Service Excellence Award
                   </h4>
                   <p className="text-xs text-[#475467] leading-relaxed">SEKO Logistics (2018) – Recognized for outstanding leadership, field sales support, and organizational contribution.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Lean Six Sigma DMAIC Visual Framework */}
+            <div className="mt-6 bg-white rounded-2xl border border-[#E7E9ED] p-6 sm:p-7 shadow-sm">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-5 pb-4 border-b border-[#F0F2F5]">
+                <div>
+                  <span className="text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[#168C8C]">Lean Six Sigma Framework</span>
+                  <h3 className="text-base sm:text-lg font-bold text-[#172033] mt-0.5">DMAIC Continuous Improvement Flow</h3>
+                </div>
+                <p className="text-xs text-[#475467] max-w-[540px] leading-relaxed">
+                  Disciplined methodology applied across freight operations, CRM architecture, and commercial workflows to eliminate waste and establish measurable control.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] items-center gap-2 sm:gap-2.5">
+                {/* Step 1: Define */}
+                <div className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-lg p-3.5 hover:border-[#168C8C]/40 hover:bg-white transition-all">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="w-8 h-8 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <Target className="w-4 h-4" />
+                    </div>
+                    <span className="text-[0.6875rem] font-bold text-[#168C8C] bg-white border border-[#E2E4E9] px-1.5 py-0.5 rounded">D</span>
+                  </div>
+                  <h4 className="font-bold text-xs sm:text-[0.8125rem] text-[#172033] mb-1">Define</h4>
+                  <p className="text-[0.6875rem] text-[#475467] leading-relaxed">Problem scope, customer requirements &amp; core objectives</p>
+                </div>
+
+                <div className="hidden lg:flex items-center justify-center text-[#94A3B8]">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+
+                {/* Step 2: Measure */}
+                <div className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-lg p-3.5 hover:border-[#168C8C]/40 hover:bg-white transition-all">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="w-8 h-8 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <Gauge className="w-4 h-4" />
+                    </div>
+                    <span className="text-[0.6875rem] font-bold text-[#168C8C] bg-white border border-[#E2E4E9] px-1.5 py-0.5 rounded">M</span>
+                  </div>
+                  <h4 className="font-bold text-xs sm:text-[0.8125rem] text-[#172033] mb-1">Measure</h4>
+                  <p className="text-[0.6875rem] text-[#475467] leading-relaxed">Baseline metrics, operational cycle times &amp; defect tracking</p>
+                </div>
+
+                <div className="hidden lg:flex items-center justify-center text-[#94A3B8]">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+
+                {/* Step 3: Analyze */}
+                <div className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-lg p-3.5 hover:border-[#168C8C]/40 hover:bg-white transition-all">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="w-8 h-8 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <Search className="w-4 h-4" />
+                    </div>
+                    <span className="text-[0.6875rem] font-bold text-[#168C8C] bg-white border border-[#E2E4E9] px-1.5 py-0.5 rounded">A</span>
+                  </div>
+                  <h4 className="font-bold text-xs sm:text-[0.8125rem] text-[#172033] mb-1">Analyze</h4>
+                  <p className="text-[0.6875rem] text-[#475467] leading-relaxed">Root-cause discovery, value streams &amp; process bottlenecks</p>
+                </div>
+
+                <div className="hidden lg:flex items-center justify-center text-[#94A3B8]">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+
+                {/* Step 4: Improve */}
+                <div className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-lg p-3.5 hover:border-[#168C8C]/40 hover:bg-white transition-all">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="w-8 h-8 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <TrendingUp className="w-4 h-4" />
+                    </div>
+                    <span className="text-[0.6875rem] font-bold text-[#168C8C] bg-white border border-[#E2E4E9] px-1.5 py-0.5 rounded">I</span>
+                  </div>
+                  <h4 className="font-bold text-xs sm:text-[0.8125rem] text-[#172033] mb-1">Improve</h4>
+                  <p className="text-[0.6875rem] text-[#475467] leading-relaxed">Targeted SOPs, workflow automation &amp; desk enablement</p>
+                </div>
+
+                <div className="hidden lg:flex items-center justify-center text-[#94A3B8]">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+
+                {/* Step 5: Control */}
+                <div className="bg-[#FAF9F6] border border-[#E2E4E9] rounded-lg p-3.5 hover:border-[#168C8C]/40 hover:bg-white transition-all">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="w-8 h-8 rounded-[6px] bg-[#E9F4F4] border border-[#168C8C]/20 text-[#168C8C] flex items-center justify-center">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <span className="text-[0.6875rem] font-bold text-[#168C8C] bg-white border border-[#E2E4E9] px-1.5 py-0.5 rounded">C</span>
+                  </div>
+                  <h4 className="font-bold text-xs sm:text-[0.8125rem] text-[#172033] mb-1">Control</h4>
+                  <p className="text-[0.6875rem] text-[#475467] leading-relaxed">KPI monitoring, audit routines &amp; autonomous team ownership</p>
                 </div>
               </div>
             </div>

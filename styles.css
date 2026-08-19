@@ -1342,6 +1342,158 @@ a:hover {
     line-height: 1.5;
 }
 
+/* Lean Six Sigma DMAIC Visual Framework */
+.dmaic-card {
+    margin-top: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    box-shadow: var(--card-shadow);
+}
+
+.dmaic-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.dmaic-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dmaic-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-teal);
+}
+
+.dmaic-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.dmaic-intro {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    max-width: 560px;
+    line-height: 1.5;
+}
+
+.dmaic-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.dmaic-node {
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 14px 14px 16px;
+    transition: border-color var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.dmaic-node:hover {
+    border-color: var(--border-teal);
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.dmaic-node-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dmaic-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: var(--bg-teal-subtle);
+    border: 1px solid var(--border-teal);
+    color: var(--accent-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dmaic-step-letter {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent-teal);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+
+.dmaic-step-name {
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.dmaic-step-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+.dmaic-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    opacity: 0.4;
+}
+
+@media (max-width: 992px) {
+    .dmaic-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .dmaic-flow {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .dmaic-connector {
+        display: none;
+    }
+
+    .dmaic-node {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 16px;
+    }
+
+    .dmaic-node-top {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+
 /* ==========================================================================
    Contact Section
    ========================================================================== */
